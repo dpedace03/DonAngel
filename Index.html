@@ -1,0 +1,2662 @@
+﻿<!DOCTYPE html><html lang='es'><head><meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no'>
+<title>Rico & natural 
+<title>Fincas Don Angel Natural</title>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'>
+<style>
+:root{--p:#3a6b2a;--a:#b5712a;--brL:#f5f0ea;--brD:#5d4037;--ws:#25D366;--del:#c0392b;--sel:#dff0d8;--acc:#7a9e3b;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:sans-serif;background:var(--brL);padding-bottom:150px;}
+.sticky-h{position:sticky;top:0;z-index:2000;box-shadow:0 3px 12px rgba(0,0,0,0.18);}
+.s-box{background:var(--p);padding:8px 10px;}
+.s-in{width:100%;padding:10px 15px;border-radius:25px;border:none;font-size:15px;}
+.o-bar{background:var(--brL);color:var(--brD);padding:10px 15px;font-weight:bold;font-size:16px;cursor:pointer;display:flex;align-items:center;gap:8px;border-bottom:2px solid #e0d5c8;}
+.portada{padding:12px 12px 4px;}
+.portada img{width:100%;height:130px;object-fit:cover;border-radius:12px;}
+.portada-titulo{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:10px;}
+.portada-titulo h1{color:var(--brD);font-size:22px;letter-spacing:1px;}
+.precio-aviso{background:#fff8e1;border-left:4px solid var(--a);color:var(--brD);font-size:13px;padding:8px 12px;margin:8px 12px 4px;border-radius:0 8px 8px 0;line-height:1.5;}
+.top-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px 6px;}
+.t-btn{height:46px;border-radius:10px;border:none;color:white;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;gap:7px;font-weight:bold;box-shadow:0 2px 5px rgba(0,0,0,0.15);}
+.t-btn:active{filter:brightness(0.9);transform:scale(0.98);}
+.sec-title{background:var(--brD);color:white;text-align:center;padding:9px;font-size:15px;font-weight:bold;margin-top:10px;letter-spacing:2px;text-transform:uppercase;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px;}
+.p-r{background:white;border-radius:14px;overflow:hidden;box-shadow:0 4px 12px rgba(90,60,30,0.13),0 1px 4px rgba(90,60,30,0.10);display:flex;flex-direction:column;transition:box-shadow 0.2s;}
+.p-r:hover{box-shadow:0 8px 22px rgba(90,60,30,0.18);}
+.p-r.selected{box-shadow:0 0 0 3px var(--p),0 6px 18px rgba(58,107,42,0.2);background:var(--sel);}
+.p-img-wrap{position:relative;width:100%;padding-top:100%;overflow:hidden;background:#ede8e0;cursor:zoom-in;}
+.p-img-wrap img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:transform 0.2s;}
+.p-img-wrap:hover img{transform:scale(1.04);}
+.no-img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#c8b8a8;font-size:38px;}
+.qty-badge{position:absolute;top:6px;right:6px;background:#a5d6a7;color:#1b5e20;border-radius:50%;width:30px;height:30px;display:none;align-items:center;justify-content:center;font-weight:bold;font-size:15px;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.25);z-index:2;}
+.p-r.selected .qty-badge{display:flex;}
+.zoom-hint{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.38);color:white;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:12px;pointer-events:none;}
+.p-body{padding:9px 8px 11px;display:flex;flex-direction:column;align-items:center;gap:5px;flex:1;text-align:center;}
+.p-name{font-size:14px;font-weight:bold;color:var(--brD);line-height:1.3;min-height:34px;}
+.p-unidad{font-size:16px;font-weight:bold;color:var(--brD);min-width:54px;text-align:center;}
+.p-unidad.medio{color:var(--del);}
+.p-unidad.cuarto{color:#8e24aa;}
+.p-precio-row{display:flex;align-items:center;justify-content:center;gap:4px;width:100%;cursor:pointer;}
+.p-val{font-size:16px;font-weight:bold;color:var(--p);cursor:pointer;padding:3px 6px;user-select:none;border-radius:6px;transition:background 0.15s;}
+.p-val:active{background:#e8f5e9;}
+.v-05{color:var(--del);font-size:12px;font-weight:bold;margin-right:3px;}
+.v-025{color:#8e24aa;font-size:12px;font-weight:bold;margin-right:3px;}
+.u-ctrl{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:3px;}
+.u-btn{width:32px;height:32px;border-radius:50%;border:2px solid var(--p);background:white;font-weight:bold;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;color:var(--p);}
+.u-btn:active{background:var(--p);color:white;}
+.u-qty{font-size:17px;font-weight:bold;min-width:24px;text-align:center;color:var(--brD);}
+#lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:11000;display:none;flex-direction:column;align-items:center;justify-content:flex-start;overflow-y:auto;}
+#lightbox.open{display:flex;animation:lbIn 0.22s ease;}
+@keyframes lbIn{from{opacity:0;transform:scale(0.93);}to{opacity:1;transform:scale(1);}}
+#lb-img{width:100%;max-width:500px;aspect-ratio:1/1;object-fit:cover;}
+#lb-body{width:100%;max-width:500px;background:#1a1a1a;padding:18px 20px 24px;}
+#lb-name{color:white;font-size:20px;font-weight:bold;margin-bottom:6px;}
+#lb-val{font-size:22px;font-weight:bold;color:#7ec87a;cursor:pointer;padding:4px 0;user-select:none;}
+#lb-precio-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px;}
+#lb-unidad{font-size:22px;font-weight:bold;color:white;}
+#lb-unidad.medio{color:#e07070;}
+#lb-unidad.cuarto{color:#ce93d8;}
+#lb-ctrl{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px;}
+.lb-btn{width:48px;height:48px;border-radius:50%;border:2px solid #7ec87a;background:transparent;color:#7ec87a;font-size:26px;font-weight:bold;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.lb-btn:active{background:#7ec87a;color:#1a1a1a;}
+#lb-qty{font-size:28px;font-weight:bold;color:white;min-width:40px;text-align:center;}
+#lb-close{width:100%;padding:14px;background:transparent;border:1px solid #444;color:#aaa;border-radius:10px;font-size:15px;cursor:pointer;letter-spacing:1px;}
+#lb-close:active{background:#333;}
+#mT{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;align-items:flex-end;justify-content:center;z-index:10500;}
+#mT.open{display:flex;}
+#mT-sheet{background:#fffaf4;width:100%;max-width:500px;border-radius:20px 20px 0 0;max-height:92vh;display:flex;flex-direction:column;animation:sheetUp 0.28s ease;}
+@keyframes sheetUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
+#mT-handle{width:40px;height:4px;background:#ccc;border-radius:4px;margin:12px auto 4px;flex-shrink:0;}
+#mT-header{display:flex;align-items:center;justify-content:space-between;padding:8px 18px 12px;border-bottom:1px solid #ede4d8;flex-shrink:0;}
+#mT-header h3{color:var(--brD);font-size:18px;}
+#mT-scroll{overflow-y:auto;flex:1;padding:0 14px;}
+#mT-footer{padding:14px 16px 20px;border-top:1px solid #ede4d8;flex-shrink:0;background:#fffaf4;}
+#mT-total{font-size:22px;font-weight:bold;color:var(--p);text-align:center;margin-bottom:12px;}
+.cart-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f0e8e0;}
+.cart-item-img{width:52px;height:52px;border-radius:8px;object-fit:cover;background:#ede8e0;flex-shrink:0;}
+.ci-noimg{display:flex;align-items:center;justify-content:center;color:#bbb;font-size:22px;}
+.cart-item-info{flex:1;min-width:0;}
+.cart-item-name{font-size:13px;font-weight:bold;color:var(--brD);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cart-item-price{font-size:13px;color:var(--p);font-weight:bold;}
+.cart-ctrl{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.cc-btn{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--p);background:white;color:var(--p);font-size:18px;font-weight:bold;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.cc-btn:active{background:var(--p);color:white;}
+.cc-btn.del-btn{border-color:var(--del);color:var(--del);font-size:14px;}
+.cc-btn.del-btn:active{background:var(--del);color:white;}
+.cc-qty{font-size:16px;font-weight:bold;min-width:22px;text-align:center;color:var(--brD);}
+.cart-group{background:#f0ebe3;padding:6px 10px;margin:10px 0 4px;border-radius:8px;font-weight:bold;font-size:13px;color:var(--brD);letter-spacing:1px;text-transform:uppercase;}
+.f-tot{position:fixed;bottom:90px;right:16px;background:var(--p);color:white;width:60px;height:60px;border-radius:50%;font-size:24px;z-index:9999;border:3px solid white;box-shadow:0 4px 16px rgba(0,0,0,0.28);cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.f-tot .cart-badge{position:absolute;top:-5px;right:-5px;background:var(--del);color:white;border-radius:50%;width:23px;height:23px;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;border:2px solid white;}
+.nav-b{position:fixed;bottom:0;width:100%;background:white;display:flex;justify-content:space-around;padding:8px 0 10px;border-top:2px solid #e8ddd4;z-index:9998;}
+.nav-btn{border:none;background:none;text-align:center;color:var(--brD);font-size:11px;font-weight:bold;cursor:pointer;padding:2px 10px;}
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);display:none;align-items:center;justify-content:center;z-index:10000;padding:15px;}
+.m-con{background:#fffaf4;padding:22px;border-radius:16px;width:100%;max-width:440px;text-align:center;max-height:88vh;overflow-y:auto;}
+.m-con h3{color:var(--brD);margin-bottom:14px;font-size:18px;}
+.m-btn{margin:5px;padding:10px 22px;border-radius:25px;border:1px solid #ccc;cursor:pointer;font-size:14px;}
+.m-btn-p{background:var(--p);color:white;border-color:var(--p);}
+.desc-btn{background:none;border:1px solid var(--a);color:var(--a);border-radius:20px;padding:3px 10px;font-size:11px;cursor:pointer;display:flex;align-items:center;gap:4px;margin:2px auto 0;}
+.desc-btn:active{background:var(--a);color:white;}
+.fav-estado{width:14px;height:14px;border-radius:50%;flex-shrink:0;border:1.5px solid rgba(0,0,0,0.15);}
+.fav-estado.amarillo{background:#f5c518;}
+.fav-estado.verde{background:#27ae60;}
+.fav-fecha{font-size:11px;color:#999;margin-left:4px;}
+#mCal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);display:none;align-items:center;justify-content:center;z-index:11000;padding:10px;}
+#mCal-sheet{background:#fffaf4;width:100%;max-width:500px;border-radius:16px;max-height:92vh;display:flex;flex-direction:column;overflow:hidden;}
+#mCal-head{background:var(--brD);color:white;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+#mCal-head h3{font-size:17px;}
+#mCal-body{overflow-y:auto;padding:12px;}
+.cal-month{font-weight:bold;color:var(--brD);font-size:14px;margin:10px 0 6px;padding-left:4px;border-left:3px solid var(--a);}
+.cal-row{display:flex;align-items:center;gap:10px;padding:10px 8px;border-bottom:1px solid #f0e8e0;}
+.cal-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+.cal-dot.verde{background:#27ae60;}.cal-dot.amarillo{background:#f5c518;}
+.cal-info{flex:1;font-size:13px;color:var(--brD);}
+.cal-info small{color:#999;font-size:11px;display:block;}
+@keyframes nuez-habla{0%,100%{transform:scale(1) rotate(-2deg);}25%{transform:scale(1.06) rotate(2deg);}50%{transform:scale(1.02) rotate(-1deg);}75%{transform:scale(1.05) rotate(1deg);}}
+@keyframes onda{0%{transform:scale(1);opacity:0.7;}100%{transform:scale(2.2);opacity:0;}}
+@keyframes parpadeo{0%,90%,100%{opacity:1;}95%{opacity:0.3;}}
+#mHabla{position:fixed;top:0;left:0;width:100%;height:100%;background:#fdfaf5;z-index:12000;display:none;flex-direction:column;overflow:hidden;}
+#mHabla.open{display:flex;}
+#mH-head{background:linear-gradient(135deg,#3a6b2a,#5a8f3a);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+#mH-head h2{color:white;font-size:18px;letter-spacing:1px;}
+#mH-close{background:none;border:none;color:white;font-size:24px;cursor:pointer;padding:4px 8px;}
+#mH-nuez-area{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px 10px;flex-shrink:0;position:relative;}
+#mH-ondas{position:absolute;width:110px;height:110px;border-radius:50%;}
+.onda-ring{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:50%;border:3px solid #3a6b2a;opacity:0;}
+.onda-ring.activa{animation:onda 1.4s ease-out infinite;}
+.onda-ring:nth-child(2){animation-delay:0.4s;}
+.onda-ring:nth-child(3){animation-delay:0.8s;}
+#mH-nuez{width:110px;height:110px;position:relative;z-index:2;}
+#mH-nuez.hablando{animation:nuez-habla 0.35s ease-in-out infinite;}
+#mH-estado{font-size:17px;font-weight:bold;color:var(--p);margin-top:12px;text-align:center;animation:parpadeo 2s infinite;}
+#mH-transcripcion{flex:1;overflow-y:auto;padding:12px 18px;}
+#mH-trans-titulo{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;}
+#mH-texto{font-size:16px;color:var(--brD);line-height:1.7;min-height:60px;}
+#mH-items{margin-top:14px;}
+.mH-item-ok{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#e8f5e9;border-radius:10px;margin-bottom:6px;font-size:14px;color:#2e7d32;font-weight:bold;}
+.mH-item-err{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#fff3e0;border-radius:10px;margin-bottom:6px;font-size:14px;color:#e65100;}
+#mH-footer{padding:14px 16px 20px;border-top:2px solid #ede4d8;background:#fdfaf5;flex-shrink:0;}
+#mH-btn-start{width:100%;padding:16px;border-radius:30px;border:none;background:var(--p);color:white;font-size:17px;font-weight:bold;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;}
+#mH-btn-start:active{filter:brightness(0.9);}
+#mH-hint{font-size:12px;color:#aaa;text-align:center;margin-top:10px;line-height:1.5;}
+#mDesc .m-con{text-align:left;}
+#mDesc-title{color:var(--brD);font-size:18px;font-weight:bold;margin-bottom:14px;text-align:center;}
+#mDesc-body{font-size:14px;color:#444;line-height:1.7;white-space:pre-wrap;background:#f9f5ef;border-radius:10px;padding:14px;border-left:4px solid var(--a);}
+@keyframes walnut-bounce{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(-8px) rotate(4deg);}}
+@keyframes walnut-pulse{0%,100%{box-shadow:0 0 0 0 rgba(181,113,42,0.5);}70%{box-shadow:0 0 0 14px rgba(181,113,42,0);}}
+@keyframes chat-open{from{opacity:0;transform:scale(0.85) translateY(20px);}to{opacity:1;transform:scale(1) translateY(0);}}
+@keyframes msg-in{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+@keyframes typing-dot{0%,80%,100%{transform:scale(0.6);opacity:0.4;}40%{transform:scale(1);opacity:1;}}
+#chat-fab{position:fixed;top:56px;left:8px;width:82px;height:82px;border-radius:50%;background:transparent;border:2.5px solid #d4a055;cursor:pointer;z-index:9997;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,0.18);animation:walnut-bounce 2.5s ease-in-out infinite,walnut-pulse 2.5s ease-in-out infinite;transition:transform 0.2s;overflow:hidden;}
+#chat-fab:active{transform:scale(0.92);}
+#chat-fab svg{width:78px;height:78px;}
+#chat-fab .chat-notif{position:absolute;top:-2px;right:-2px;background:var(--del);color:white;border-radius:50%;width:22px;height:22px;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;border:2px solid white;}
+#chat-win{position:fixed;top:0;left:0;width:100%;height:100%;max-width:100%;background:white;border-radius:0;box-shadow:none;z-index:10900;display:none;flex-direction:column;overflow:hidden;}
+#chat-win.open{display:flex;animation:chat-open 0.25s ease;}
+#chat-head{background:linear-gradient(135deg,#3a6b2a,#5a8f3a);padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
+#chat-head-ico{width:40px;height:40px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+#chat-head-ico svg{width:24px;height:24px;}
+#chat-head-info{flex:1;}
+#chat-head-info b{color:white;font-size:15px;display:block;}
+#chat-head-info span{color:rgba(255,255,255,0.75);font-size:11px;}
+#chat-close{background:none;border:none;color:rgba(255,255,255,0.8);font-size:22px;cursor:pointer;padding:4px 8px;line-height:1;}
+#chat-msgs{flex:1;overflow-y:auto;padding:14px 12px;display:flex;flex-direction:column;gap:10px;background:#f7f3ee;}
+.cm{display:flex;gap:8px;animation:msg-in 0.2s ease;}
+.cm.bot{align-items:flex-start;}
+.cm.usr{flex-direction:row-reverse;}
+.cm-ico{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#b5712a,#8d5520);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.cm-ico svg{width:17px;height:17px;}
+.cm-bub{max-width:82%;padding:10px 13px;border-radius:16px;font-size:13px;line-height:1.5;}
+.cm.bot .cm-bub{background:white;color:#333;border-radius:4px 16px 16px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.09);}
+.cm.usr .cm-bub{background:var(--p);color:white;border-radius:16px 4px 16px 16px;}
+.typing-ind{display:flex;gap:5px;align-items:center;padding:4px 2px;}
+.typing-ind span{width:7px;height:7px;border-radius:50%;background:#aaa;animation:typing-dot 1.2s infinite ease-in-out;}
+.typing-ind span:nth-child(2){animation-delay:0.2s;}.typing-ind span:nth-child(3){animation-delay:0.4s;}
+#chat-suggs{display:flex;gap:6px;padding:8px 12px;overflow-x:auto;flex-shrink:0;background:#f7f3ee;border-top:1px solid #ece7e0;}
+#chat-suggs::-webkit-scrollbar{display:none;}
+.sugg-btn{white-space:nowrap;padding:6px 12px;border-radius:20px;border:1.5px solid var(--a);background:white;color:var(--a);font-size:12px;cursor:pointer;flex-shrink:0;}
+.sugg-btn:active{background:var(--a);color:white;}
+#chat-inp-row{display:flex;gap:8px;padding:10px 12px;border-top:1px solid #ece7e0;background:white;flex-shrink:0;}
+#chat-inp{flex:1;padding:10px 14px;border-radius:22px;border:1.5px solid #ddd;font-size:14px;outline:none;}
+#chat-inp:focus{border-color:var(--a);}
+#chat-send{width:40px;height:40px;border-radius:50%;background:var(--p);border:none;color:white;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+#chat-send:active{background:var(--acc);}
+</style></head><body>
+<div class='sticky-h'>
+  <div class='s-box' style='display:flex;gap:8px;align-items:center;'>
+    <input type='text' id='sI' class='s-in' placeholder='Buscar o dictar producto...' oninput='filt()'>
+    <button type='button' onclick='comenzarDictado()' id='btnVoz' style='background:white;border:none;border-radius:50%;width:42px;height:42px;color:var(--p);font-size:18px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;'><i class='fa-solid fa-microphone'></i></button>
+  </div>
+  <div class='o-bar' onclick="opM('mS')">
+    <i class='fa-solid fa-basket-shopping' style='color:var(--brD);'></i>
+    <span style='flex:1;'>Editando: <b id='curN'>Pedido 1</b></span>
+    <i class='fa-solid fa-chevron-down' style='color:var(--brD);font-size:13px;'></i>
+  </div>
+</div>
+<button id='chat-fab' onclick='toggleChat()' title='Preguntame sobre frutos secos'>
+<svg viewBox='0 0 112 112' xmlns='http://www.w3.org/2000/svg'>
+  <circle cx='56' cy='56' r='56' fill='#fff8ee'/>
+  <ellipse cx='56' cy='60' rx='30' ry='26' fill='#c8872a'/>
+  <ellipse cx='48' cy='46' rx='10' ry='6' fill='#e8a84a' opacity='0.5'/>
+  <path d='M56 36 Q58 60 56 84' stroke='#8d5520' stroke-width='2' fill='none' stroke-linecap='round'/>
+  <path d='M28 62 Q56 58 84 62' stroke='#8d5520' stroke-width='1.5' fill='none'/>
+  <path d='M34 52 Q42 66 38 76' stroke='#8d5520' stroke-width='1.2' fill='none' opacity='0.6'/>
+  <path d='M78 52 Q70 66 74 76' stroke='#8d5520' stroke-width='1.2' fill='none' opacity='0.6'/>
+  <rect x='49' y='28' width='14' height='10' rx='4' fill='#6b3f10'/>
+  <path d='M51 32 Q56 24 61 32' stroke='#4a2a08' stroke-width='1.5' fill='none' stroke-linecap='round'/>
+  <circle cx='46' cy='56' r='7' fill='white'/>
+  <circle cx='66' cy='56' r='7' fill='white'/>
+  <circle cx='47' cy='57' r='4' fill='#3a2010'/>
+  <circle cx='67' cy='57' r='4' fill='#3a2010'/>
+  <circle cx='48' cy='55' r='1.5' fill='white'/>
+  <circle cx='68' cy='55' r='1.5' fill='white'/>
+  <path d='M44 70 Q56 78 68 70' stroke='#6b3f10' stroke-width='2.5' fill='none' stroke-linecap='round'/>
+  <ellipse cx='38' cy='68' rx='7' ry='4' fill='#e07030' opacity='0.28'/>
+  <ellipse cx='74' cy='68' rx='7' ry='4' fill='#e07030' opacity='0.28'/>
+  <rect x='70' y='14' width='34' height='22' rx='8' fill='#3a6b2a'/>
+  <path d='M76 36 L70 44 L88 36' fill='#3a6b2a'/>
+  <circle cx='79' cy='25' r='3.5' fill='white'/>
+  <circle cx='87' cy='25' r='3.5' fill='white'/>
+  <circle cx='95' cy='25' r='3.5' fill='white'/>
+</svg>
+<div class='chat-notif' id='chat-notif'>1</div>
+</button>
+<div class='portada'>
+<div class='portada-titulo'>
+<h1>&#x1F33F; Rico & natural &#x1F33F;<br>&#x1F33F; Fincas Don Angel &#x1F33F;</h1>
+</div>
+<img src='https://aesekol.com/wp-content/uploads/2020/08/frutos-secos-en-granel-y-retail-aesekol-distribuidor-internacional.jpg' alt='portada'>
+<div class='precio-aviso'>
+<i class='fa-solid fa-circle-info' style='color:var(--a);margin-right:6px;'></i>
+<b>El precio es por kilo</b>. Toc&aacute; el precio para cambiar la presentaci&oacute;n: <b>1&nbsp;kg &rarr; 0,5&nbsp;kg &rarr; 0,25&nbsp;kg</b> y as&iacute; sucesivamente.
+</div>
+<div class='top-btns' style='grid-template-columns:1fr 1fr 1fr;'>
+<button class='t-btn' onclick='clU_Full()' style='background:var(--brD);'><i class='fa-solid fa-trash-can'></i> Limpiar</button>
+<button id='btnOrd' class='t-btn' onclick='ordBy()' style='background:var(--acc);'><i class='fa-solid fa-sort-alpha-down' id='icoOrd'></i> A &rarr; Z</button>
+<button id='btnEye' class='t-btn' onclick='tglFiltSel()' style='background:var(--a);'><i class='fa-solid fa-eye'></i> Filtrar</button>
+<button class='t-btn' onclick="opM('mN')" style='background:var(--p);'><i class='fa-solid fa-plus'></i> Nuevo</button>
+<button class='t-btn' onclick='abrirHabla()' style='background:linear-gradient(135deg,#e57373,#ef9a9a);grid-column:span 2;'><i class='fa-solid fa-microphone-lines'></i> &nbsp;Habl&aacute;me</button>
+</div></div>
+<div class='sec-title'>FRUTOS SECOS</div>
+<div class='grid'>
+<div class='p-r' data-idx='1' data-img='Nueces.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Nueces.png' alt='Nueces x 100grs MARIPOSA EXTRA LIGHT' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Nueces x 100grs MARIPOSA EXTRA LIGHT'>Nueces x 100grs MARIPOSA EXTRA LIGHT</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),18000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='18000' data-h='false'>$&nbsp;18.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='2' data-img='Nueces.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Nueces.png' alt='Nueces MARIPOSA LIGTH' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Nueces MARIPOSA LIGTH'>Nueces MARIPOSA LIGTH</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),16500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='16500' data-h='false'>$&nbsp;16.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='3' data-img='Almendras.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Almendras.png' alt='ALMENDRAS x 100grs non pareid' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='ALMENDRAS x 100grs non pareid'>ALMENDRAS x 100grs non pareid</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),19000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='19000' data-h='false'>$&nbsp;19.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='4' data-img='Avellanas.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Avellanas.png' alt='AVELLANAS' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='AVELLANAS'>AVELLANAS</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),28000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='28000' data-h='false'>$&nbsp;28.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='5' data-img='Arandanos.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Arandanos.png' alt='ARANDANOS' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='ARANDANOS'>ARANDANOS</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),12000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='12000' data-h='false'>$&nbsp;12.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='6' data-img='CastañasNatural.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='CastañasNatural.png' alt='CASTAÑA DE CAJU NATURAL x 100 grs' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='CASTAÑA DE CAJU NATURAL x 100 grs'>CASTAÑA DE CAJU NATURAL x 100 grs</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),16000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='16000' data-h='false'>$&nbsp;16.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='7' data-img='Castañastostadas.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Castañastostadas.png' alt='Castaña tostada x 100grs' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Castaña tostada x 100grs'>Castaña tostada x 100grs</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),16500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='16500' data-h='false'>$&nbsp;16.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='8' data-img='Castañastostadas.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Castañastostadas.png' alt='Castaña tostada y salada x 100grs' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Castaña tostada y salada x 100grs'>Castaña tostada y salada x 100grs</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),16500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='16500' data-h='false'>$&nbsp;16.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='9' data-img='Pistachos.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Pistachos.png' alt='Pistachos x 70 grs' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Pistachos x 70 grs'>Pistachos x 70 grs</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),35000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='35000' data-h='false'>$&nbsp;35.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='10' data-img='MixFrutal.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='MixFrutal.png' alt='Mix frutal x 100grs (mani,pasas,alm,cast,nue)' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Mix frutal x 100grs (mani,pasas,alm,cast,nue)'>Mix frutal x 100grs (mani,pasas,alm,cast,nue)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),9000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='9000' data-h='false'>$&nbsp;9.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='11' data-img='MixTropical.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='MixTropical.png' alt='Mix tropical x 100grs.(man,pas,nue,alm,ban,pera y dur)' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Mix tropical x 100grs.(man,pas,nue,alm,ban,pera y dur)'>Mix tropical x 100grs.(man,pas,nue,alm,ban,pera y dur)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),9000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='9000' data-h='false'>$&nbsp;9.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='12' data-img='MixSecoPremium.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='MixSecoPremium.png' alt='Mix secos x 100grs. (nue,alm,cat,avella)' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Mix secos x 100grs. (nue,alm,cat,avella)'>Mix secos x 100grs. (nue,alm,cat,avella)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),18500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='18500' data-h='false'>$&nbsp;18.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='13' data-img='Ciruela.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Ciruela.png' alt='Ciruelas sin carozo x 200grs.' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Ciruelas sin carozo x 200grs.'>Ciruelas sin carozo x 200grs.</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),6300)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='6300' data-h='false'>$&nbsp;6.300</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='14' data-img='Pasasnegras.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Pasasnegras.png' alt='Pasas negras sin/SEMILLA X 200GRS.' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Pasas negras sin/SEMILLA X 200GRS.'>Pasas negras sin/SEMILLA X 200GRS.</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),4500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='4500' data-h='false'>$&nbsp;4.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='15' data-img='Pasasnegras.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Pasasnegras.png' alt='Pasas Jumbo (Nuevo)' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Pasas Jumbo (Nuevo)'>Pasas Jumbo (Nuevo)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),5500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='5500' data-h='false'>$&nbsp;5.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='16' data-img='Pasasrubias.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Pasasrubias.png' alt='Pasas rubias x 100grs.' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Pasas rubias x 100grs.'>Pasas rubias x 100grs.</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),7500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='7500' data-h='false'>$&nbsp;7.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='17' data-img='Tomate.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Tomate.png' alt='Tomate deshidratado x 100grs.' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Tomate deshidratado x 100grs.'>Tomate deshidratado x 100grs.</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),12500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='12500' data-h='false'>$&nbsp;12.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='18' data-img='MixVaco.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='MixVaco.png' alt='Mix vaco salado x 180grs (girasol mani,choc,zapallo,cast y alm)' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Mix vaco salado x 180grs (girasol mani,choc,zapallo,cast y alm)'>Mix vaco salado x 180grs (girasol mani,choc,zapallo,cast y alm)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),8500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='8500' data-h='false'>$&nbsp;8.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='19' data-img='MixDeportivo.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='MixDeportivo.png' alt='Mix Deportivo 180grs (Nueces tostada,almendras.castañas.mani y banana) Nuevo' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Mix Deportivo 180grs (Nueces tostada,almendras.castañas.mani y banana) Nuevo'>Mix Deportivo 180grs (Nueces tostada,almendras.castañas.mani y banana) Nuevo</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),11000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='11000' data-h='false'>$&nbsp;11.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='20' data-img='MixEuropeo.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='MixEuropeo.png' alt='Mix europeo x 180grs (nue,pasas negras, pasas rubias alm,cast)' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Mix europeo x 180grs (nue,pasas negras, pasas rubias alm,cast)'>Mix europeo x 180grs (nue,pasas negras, pasas rubias alm,cast)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),10000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='10000' data-h='false'>$&nbsp;10.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='21' data-img='MixSureño.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='MixSureño.png' alt='Mix del sureño x 180grs (coco, arandano, nueces, almemndras, castañas, avellana y pasas negras)' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Mix del sureño x 180grs (coco, arandano, nueces, almemndras, castañas, avellana y pasas negras)'>Mix del sureño x 180grs (coco, arandano, nueces, almemndras, castañas, avellana y pasas negras)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),11500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='11500' data-h='false'>$&nbsp;11.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='22' data-img='MixSeco.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='MixSeco.png' alt='MIX SECOS ECO' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='MIX SECOS ECO'>MIX SECOS ECO</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),11000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='11000' data-h='false'>$&nbsp;11.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='23' data-img='MixDuo.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='MixDuo.png' alt='MIX DUO' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='MIX DUO'>MIX DUO</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),19000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='19000' data-h='false'>$&nbsp;19.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='24' data-img='GranolaPatagonica.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='GranolaPatagonica.png' alt='Granola patagonica x 150 grs. (miel,copos,avena tost,alm,pas,ara)' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Granola patagonica x 150 grs. (miel,copos,avena tost,alm,pas,ara)'>Granola patagonica x 150 grs. (miel,copos,avena tost,alm,pas,ara)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),7500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='7500' data-h='false'>$&nbsp;7.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='25' data-img='GranolaTropical.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='GranolaTropical.png' alt='Granola x 150 grs Tropical (miel,copos,avena tost,alm,pas,pera,durazno y banana)' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Granola x 150 grs Tropical (miel,copos,avena tost,alm,pas,pera,durazno y banana)'>Granola x 150 grs Tropical (miel,copos,avena tost,alm,pas,pera,durazno y banana)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),7500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='7500' data-h='false'>$&nbsp;7.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='26' data-img='GranolaPremium.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='GranolaPremium.png' alt='Granola Premium x 150grs. (AVENA tostada,pasas, miel, semilla de chia,durazno , pera y almendras)' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Granola Premium x 150grs. (AVENA tostada,pasas, miel, semilla de chia,durazno , pera y almendras)'>Granola Premium x 150grs. (AVENA tostada,pasas, miel, semilla de chia,durazno , pera y almendras)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),7500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='7500' data-h='false'>$&nbsp;7.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='27' data-img='GranolaEnergetica.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='GranolaEnergetica.png' alt='Granola Energetica x 150grs.(AVENA tostada,copos s/a,almen,maní y girasol)' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Granola Energetica x 150grs.(AVENA tostada,copos s/a,almen,maní y girasol)'>Granola Energetica x 150grs.(AVENA tostada,copos s/a,almen,maní y girasol)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),7500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='7500' data-h='false'>$&nbsp;7.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='28' data-img='Choclito.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Choclito.png' alt='CHOCLITO x100grs' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='CHOCLITO x100grs'>CHOCLITO x100grs</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),11500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='11500' data-h='false'>$&nbsp;11.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='29' data-img='Manies.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Manies.png' alt='Mani tostado sin sal x 180grs.' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Mani tostado sin sal x 180grs.'>Mani tostado sin sal x 180grs.</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),3300)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='3300' data-h='false'>$&nbsp;3.300</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='30' data-img='Manies.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Manies.png' alt='Mani salado x 180grs.' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Mani salado x 180grs.'>Mani salado x 180grs.</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),3300)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='3300' data-h='false'>$&nbsp;3.300</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='31' data-img='Manijapones.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Manijapones.png' alt='mani japones x 180grs.' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='mani japones x 180grs.'>mani japones x 180grs.</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),4200)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='4200' data-h='false'>$&nbsp;4.200</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='32' data-img='Palitos.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Palitos.png' alt='Palitos salados x 80grs.' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Palitos salados x 80grs.'>Palitos salados x 80grs.</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),3500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='3500' data-h='false'>$&nbsp;3.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='33' data-img='Bananitas.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Bananitas.png' alt='Banana deshidratada x 90grs.' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Banana deshidratada x 90grs.'>Banana deshidratada x 90grs.</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),11000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='11000' data-h='false'>$&nbsp;11.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='34' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Datil EGIPTO'>Datil EGIPTO</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),8000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='8000' data-h='false'>$&nbsp;8.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='35' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='HIGO NEGRO'>HIGO NEGRO</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),2000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='2000' data-h='false'>$&nbsp;2.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='36' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='HONGOS DE PINO'>HONGOS DE PINO</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),5000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='5000' data-h='false'>$&nbsp;5.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='37' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='FLOR DE JAMAICA'>FLOR DE JAMAICA</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),0)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='0' data-h='false'>$&nbsp;0</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='38' data-img='Salhimalaya.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Salhimalaya.png' alt='Sal de himalaya fina' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Sal de himalaya fina'>Sal de himalaya fina</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),3050)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='3050' data-h='false'>$&nbsp;3.050</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='39' data-img='SalMarina.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='SalMarina.png' alt='Sal Marina x500grs' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Sal Marina x500grs'>Sal Marina x500grs</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),3200)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='3200' data-h='false'>$&nbsp;3.200</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='40' data-img='Cacaoamargo.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Cacaoamargo.png' alt='Cacao Amargo' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Cacao Amargo'>Cacao Amargo</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),12000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='12000' data-h='false'>$&nbsp;12.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='41' data-img='HarinaDeAlmendra.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='HarinaDeAlmendra.png' alt='Harina de Almendra' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Harina de Almendra'>Harina de Almendra</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),5000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='5000' data-h='false'>$&nbsp;5.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='42' data-img='Cocorallado.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='Cocorallado.png' alt='Coco Rallado higth' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Coco Rallado higth'>Coco Rallado higth</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),11000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='11000' data-h='false'>$&nbsp;11.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='43' data-img='SemillasGirasol.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='SemillasGirasol.png' alt='Semilla girasol pelado' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Semilla girasol pelado'>Semilla girasol pelado</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),4500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='4500' data-h='false'>$&nbsp;4.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='44' data-img='SemillaZapallo.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='SemillaZapallo.png' alt='Semilla Zapallo' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Semilla Zapallo'>Semilla Zapallo</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),12000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='12000' data-h='false'>$&nbsp;12.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='45' data-img='SemillaQuinoa.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='SemillaQuinoa.png' alt='Semilla de Quinoa' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Semilla de Quinoa'>Semilla de Quinoa</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),5700)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='5700' data-h='false'>$&nbsp;5.700</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='46' data-img='SemillaLino.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='SemillaLino.png' alt='Semilla de lino' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Semilla de lino'>Semilla de lino</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),2800)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='2800' data-h='false'>$&nbsp;2.800</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='47' data-img='SemillaChia.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='SemillaChia.png' alt='Semilla Chia' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Semilla Chia'>Semilla Chia</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),7000)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='7000' data-h='false'>$&nbsp;7.000</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='48' data-img='MixSemillas.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='MixSemillas.png' alt='Mix de semillas (S. girasol, s. de lino, s de chia y s.sesamo )' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Mix de semillas (S. girasol, s. de lino, s de chia y s.sesamo )'>Mix de semillas (S. girasol, s. de lino, s de chia y s.sesamo )</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),4500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='4500' data-h='false'>$&nbsp;4.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='49' data-img='AlmohaditasLimon.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='AlmohaditasLimon.png' alt='Almohaditas frutilla X500 Y 250GRS' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Almohaditas frutilla X500 Y 250GRS'>Almohaditas frutilla X500 Y 250GRS</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),6500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='6500' data-h='false'>$&nbsp;6.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='50' data-img='AlmohaditasLimon.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='AlmohaditasLimon.png' alt='Almohaditas limon X500 Y 250GRS' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Almohaditas limon X500 Y 250GRS'>Almohaditas limon X500 Y 250GRS</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),6500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='6500' data-h='false'>$&nbsp;6.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='51' data-img='AlmohaditasLimon.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='AlmohaditasLimon.png' alt='Almohaditas avellana X 500 Y 250GRS' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Almohaditas avellana X 500 Y 250GRS'>Almohaditas avellana X 500 Y 250GRS</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),6500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='6500' data-h='false'>$&nbsp;6.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='52' data-img='AlmohaditasLimon.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='AlmohaditasLimon.png' alt='Almohadita Mani X500 Y 250GRS' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Almohadita Mani X500 Y 250GRS'>Almohadita Mani X500 Y 250GRS</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),6500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='6500' data-h='false'>$&nbsp;6.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='53' data-img='AlmohaditasLimon.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='AlmohaditasLimon.png' alt='Almohaditas Chocolate negro X500 Y 250GRS' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Almohaditas Chocolate negro X500 Y 250GRS'>Almohaditas Chocolate negro X500 Y 250GRS</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),6500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='6500' data-h='false'>$&nbsp;6.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='54' data-img='AlmohaditasLimon.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='AlmohaditasLimon.png' alt='Almohaditas CHOCOLATE BLANCO X500 Y 250GRS' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Almohaditas CHOCOLATE BLANCO X500 Y 250GRS'>Almohaditas CHOCOLATE BLANCO X500 Y 250GRS</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),6500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='6500' data-h='false'>$&nbsp;6.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='55' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Copos de Maiz Granix sin azucar'>Copos de Maiz Granix sin azucar</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),3100)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='3100' data-h='false'>$&nbsp;3.100</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='56' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Copos de Maiz Granix con azucar'>Copos de Maiz Granix con azucar</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),3500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='3500' data-h='false'>$&nbsp;3.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='57' data-img='HigoCon.png' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<img src='HigoCon.png' alt='HIGO CON NUEZ X 48 UNIDADES' loading='lazy' onerror="this.style.display='none'">
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='HIGO CON NUEZ X 48 UNIDADES'>HIGO CON NUEZ X 48 UNIDADES</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),10500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='10500' data-h='false'>$&nbsp;10.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='58' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='Arroz Yamani'>Arroz Yamani</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),2500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='2500' data-h='false'>$&nbsp;2.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='59' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='BICARBONATO DE SODIO'>BICARBONATO DE SODIO</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),4800)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='4800' data-h='false'>$&nbsp;4.800</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='60' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='MACA PERUANA x 150grs'>MACA PERUANA x 150grs</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),1350)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='1350' data-h='false'>$&nbsp;1.350</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='61' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='MACA KALPA (nutritiva, energizante y vigorizante x 500grs)'>MACA KALPA (nutritiva, energizante y vigorizante x 500grs)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),1800)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='1800' data-h='false'>$&nbsp;1.800</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='62' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='BICARBONATO DE SODIO'>BICARBONATO DE SODIO</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),4800)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='4800' data-h='false'>$&nbsp;4.800</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='63' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='MACA PERUANA x 150grs'>MACA PERUANA x 150grs</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),1350)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='1350' data-h='false'>$&nbsp;1.350</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='64' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='MACA KALPA (nutritiva, energizante y vigorizante x 500grs)'>MACA KALPA (nutritiva, energizante y vigorizante x 500grs)</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),1800)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='1800' data-h='false'>$&nbsp;1.800</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+<div class='p-r' data-idx='65' data-img='' data-desc=''>
+<div class='p-img-wrap' onclick='openLB(this.closest(".p-r"))'>
+<div class='qty-badge u-qty'>0</div>
+<div class='zoom-hint'><i class='fa-solid fa-magnifying-glass-plus'></i></div>
+</div>
+<div class='p-body'>
+<div class='p-name' data-n='ACEITE DE CBD ROYAL'>ACEITE DE CBD ROYAL</div>
+<div class='p-precio-row' onclick='tp(this.querySelector(".p-val"),3500)'>
+<span class='p-unidad'>1&nbsp;kg</span>
+<div class='p-val' data-o='3500' data-h='false'>$&nbsp;3.500</div>
+</div>
+<div class='u-ctrl'>
+<button class='u-btn' onclick='modQ(this,-1)'>&#8722;</button>
+<span class='u-qty-txt u-qty'>0</span>
+<button class='u-btn' onclick='modQ(this,1)'>&#43;</button>
+</div>
+</div></div>
+</div>
+<div id='lightbox'>
+<img id='lb-img' src='' alt=''>
+<div id='lb-body'>
+<div id='lb-name'></div>
+<div id='lb-precio-row' onclick='lbTogglePrice()'>
+<span id='lb-unidad'>1&nbsp;kg</span>
+<div id='lb-val'></div>
+</div>
+<div id='lb-ctrl'>
+<button class='lb-btn' onclick='lbModQ(-1)'>&#8722;</button>
+<span id='lb-qty'>0</span>
+<button class='lb-btn' onclick='lbModQ(1)'>&#43;</button>
+</div>
+<button id='lb-close' onclick='closeLB()'>&#x2715; CERRAR</button>
+</div></div>
+<button class='f-tot' onclick='tot()' title='Ver carrito'>
+<i class='fa-solid fa-cart-shopping'></i>
+<span class='cart-badge' id='qB'>0</span>
+</button>
+<div class='nav-b'>
+<button class='nav-btn' onclick='saveFav()'><i class='fa-solid fa-floppy-disk fa-2x' style='color:var(--p)'></i><br>Guardar</button>
+<button class='nav-btn' onclick="opM('mFav')"><i class='fa-solid fa-star fa-2x' style='color:var(--a)'></i><br>Favoritos</button>
+<button class='nav-btn' onclick="opM('mK')"><i class='fa-solid fa-file-pen fa-2x' style='color:#607d8b'></i><br>Nota</button>
+</div>
+<div id='mT' onclick='mTClick(event)'>
+<div id='mT-sheet'>
+<div id='mT-handle'></div>
+<div id='mT-header'>
+<h3><i class='fa-solid fa-cart-shopping'></i> Carrito</h3>
+<p style='font-size:11px;color:#999;margin:2px 0 0;font-style:italic;'>Envi&aacute;nos tu pedido y te avisamos cuando est&eacute; listo.</p>
+<button onclick="document.getElementById('mT').classList.remove('open')" style='background:none;border:none;font-size:22px;color:#aaa;cursor:pointer;'>&times;</button>
+</div>
+<div id='mT-scroll'><div id='lT'></div></div>
+<div id='mT-footer'>
+<div id='mT-total'></div>
+<button onclick='snd()' style='background:var(--ws);color:white;width:100%;padding:14px;border-radius:30px;border:none;font-weight:bold;font-size:16px;cursor:pointer;margin-bottom:8px;'>
+<i class='fa-brands fa-whatsapp'></i> Enviar por WhatsApp</button>
+<button onclick="document.getElementById('mT').classList.remove('open')" style='width:100%;padding:11px;border-radius:30px;border:1px solid #ccc;background:white;font-size:14px;cursor:pointer;color:var(--brD);'>Volver</button>
+</div></div></div>
+<div id='mFav' class='modal' onclick="clMClick(event,'mFav')">
+<div class='m-con'><h3><i class='fa-solid fa-star' style='color:var(--a)'></i> Favoritos</h3>
+<div id='lFav'></div>
+<button class='m-btn' style='background:#607d8b;color:white;border-color:#607d8b;margin-top:10px;' onclick='opM("mCal")'><i class='fa-solid fa-calendar-days'></i> Pedidos Anteriores</button>
+<button class='m-btn' onclick="clM('mFav')">Cerrar</button></div></div>
+<div id='mCal'>
+  <div id='mCal-sheet'>
+    <div id='mCal-head'><h3><i class='fa-solid fa-calendar-days'></i> Historial de pedidos</h3>
+    <button onclick="clM('mCal')" style='background:none;border:none;color:white;font-size:22px;cursor:pointer;'>&times;</button></div>
+    <div id='mCal-body'><p style='color:#bbb;text-align:center;padding:20px;'>Sin pedidos registrados.</p></div>
+  </div>
+</div>
+<div id='mHabla'>
+  <div id='mH-head'>
+    <h2><i class='fa-solid fa-microphone-lines'></i> Habl\u00e1me</h2>
+    <button id='mH-close' onclick='cerrarHabla()'>&times;</button>
+  </div>
+  <div id='mH-nuez-area'>
+    <div id='mH-ondas'>
+      <div class='onda-ring'></div>
+      <div class='onda-ring'></div>
+      <div class='onda-ring'></div>
+    </div>
+    <div id='mH-nuez'>
+      <svg viewBox='0 0 112 112' width='110' height='110' xmlns='http://www.w3.org/2000/svg'>
+        <circle cx='56' cy='56' r='56' fill='#fff8ee'/>
+        <ellipse cx='56' cy='60' rx='30' ry='26' fill='#c8872a'/>
+        <ellipse cx='48' cy='46' rx='10' ry='6' fill='#e8a84a' opacity='0.5'/>
+        <path d='M56 36 Q58 60 56 84' stroke='#8d5520' stroke-width='2' fill='none' stroke-linecap='round'/>
+        <path d='M28 62 Q56 58 84 62' stroke='#8d5520' stroke-width='1.5' fill='none'/>
+        <path d='M34 52 Q42 66 38 76' stroke='#8d5520' stroke-width='1.2' fill='none' opacity='0.6'/>
+        <path d='M78 52 Q70 66 74 76' stroke='#8d5520' stroke-width='1.2' fill='none' opacity='0.6'/>
+        <rect x='49' y='28' width='14' height='10' rx='4' fill='#6b3f10'/>
+        <path d='M51 32 Q56 24 61 32' stroke='#4a2a08' stroke-width='1.5' fill='none' stroke-linecap='round'/>
+        <circle cx='46' cy='56' r='7' fill='white'/>
+        <circle cx='66' cy='56' r='7' fill='white'/>
+        <circle cx='47' cy='57' r='4' fill='#3a2010' id='mH-ojo-i'/>
+        <circle cx='67' cy='57' r='4' fill='#3a2010' id='mH-ojo-d'/>
+        <circle cx='48' cy='55' r='1.5' fill='white'/>
+        <circle cx='68' cy='55' r='1.5' fill='white'/>
+        <path d='M44 70 Q56 78 68 70' stroke='#6b3f10' stroke-width='2.5' fill='none' stroke-linecap='round' id='mH-boca'/>
+        <ellipse cx='38' cy='68' rx='7' ry='4' fill='#e07030' opacity='0.28'/>
+        <ellipse cx='74' cy='68' rx='7' ry='4' fill='#e07030' opacity='0.28'/>
+      </svg>
+    </div>
+    <div id='mH-estado'>Presion\u00e1 el bot\u00f3n para empezar</div>
+  </div>
+  <div id='mH-transcripcion'>
+    <div id='mH-trans-titulo'>Lo que dict\u00e1s:</div>
+    <div id='mH-texto'></div>
+    <div id='mH-items'></div>
+  </div>
+  <div id='mH-footer'>
+    <button id='mH-btn-start' onclick='toggleHabla()'>
+      <i class='fa-solid fa-microphone' id='mH-btn-ico'></i>
+      <span id='mH-btn-txt'>Te escucho</span>
+    </button>
+    <div id='mH-hint'>Dec\u00ed por ejemplo:<br><i>&ldquo;Un kilo nueces&rdquo;</i> &#8594; <b>Paso</b> &#8594; <i>&ldquo;Medio kilo almendras&rdquo;</i> &#8594; <b>Final</b><br><small style="color:#aaa;">Cada producto: cantidad, medida, nombre. <b>Paso</b> para el siguiente. <b>Final</b> para terminar.</small></div>
+  </div>
+</div>
+<div id='mK' class='modal' onclick="clMClick(event,'mK')">
+<div class='m-con'><h3><i class='fa-solid fa-file-pen'></i> Nota del pedido</h3>
+<textarea id='oT' style='width:100%;height:90px;padding:8px;border-radius:8px;border:1px solid #ccc;font-size:14px;resize:none;'></textarea>
+<br><button class='m-btn m-btn-p' onclick='saveNote()'>Guardar</button>
+<button class='m-btn' onclick="clM('mK')">Cerrar</button></div></div>
+<div id='mS' class='modal' onclick="clMClick(event,'mS')">
+<div class='m-con'><h3><i class='fa-solid fa-basket-shopping'></i> Sub-pedidos</h3>
+<div id='lS'></div>
+<button class='m-btn' onclick="clM('mS')">Cerrar</button></div></div>
+<div id='mN' class='modal' onclick="clMClick(event,'mN')">
+<div class='m-con'><h3><i class='fa-solid fa-plus'></i> Nuevo sub-pedido</h3>
+<input type='text' id='iN' style='width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;font-size:15px;' placeholder='Nombre...'>
+<br><button class='m-btn m-btn-p' onclick='cN()' style='margin-top:10px;'>Crear</button>
+<button class='m-btn' onclick="clM('mN')">Cancelar</button></div></div>
+<div id='mDesc' class='modal' onclick="clMClick(event,'mDesc')">
+<div class='m-con'>
+<div id='mDesc-title'></div>
+<div id='mDesc-body'></div>
+<button class='m-btn m-btn-p' style='margin-top:16px;width:100%;' onclick="clM('mDesc')">Cerrar</button>
+</div></div>
+<div id='chat-win'>
+  <div id='chat-head'>
+    <div id='chat-head-ico'>
+      <svg viewBox='0 0 112 112' xmlns='http://www.w3.org/2000/svg'>
+        <circle cx='56' cy='56' r='56' fill='#fff8ee'/>
+        <ellipse cx='56' cy='60' rx='30' ry='26' fill='#c8872a'/>
+        <ellipse cx='48' cy='46' rx='10' ry='6' fill='#e8a84a' opacity='0.5'/>
+        <path d='M56 36 Q58 60 56 84' stroke='#8d5520' stroke-width='2' fill='none' stroke-linecap='round'/>
+        <path d='M28 62 Q56 58 84 62' stroke='#8d5520' stroke-width='1.5' fill='none'/>
+        <path d='M34 52 Q42 66 38 76' stroke='#8d5520' stroke-width='1.2' fill='none' opacity='0.6'/>
+        <path d='M78 52 Q70 66 74 76' stroke='#8d5520' stroke-width='1.2' fill='none' opacity='0.6'/>
+        <rect x='49' y='28' width='14' height='10' rx='4' fill='#6b3f10'/>
+        <path d='M51 32 Q56 24 61 32' stroke='#4a2a08' stroke-width='1.5' fill='none' stroke-linecap='round'/>
+        <circle cx='46' cy='56' r='7' fill='white'/>
+        <circle cx='66' cy='56' r='7' fill='white'/>
+        <circle cx='47' cy='57' r='4' fill='#3a2010'/>
+        <circle cx='67' cy='57' r='4' fill='#3a2010'/>
+        <circle cx='48' cy='55' r='1.5' fill='white'/>
+        <circle cx='68' cy='55' r='1.5' fill='white'/>
+        <path d='M44 70 Q56 78 68 70' stroke='#6b3f10' stroke-width='2.5' fill='none' stroke-linecap='round'/>
+        <ellipse cx='38' cy='68' rx='7' ry='4' fill='#e07030' opacity='0.28'/>
+        <ellipse cx='74' cy='68' rx='7' ry='4' fill='#e07030' opacity='0.28'/>
+        <rect x='70' y='14' width='34' height='22' rx='8' fill='white' opacity='0.25'/>
+        <circle cx='79' cy='25' r='3' fill='white' opacity='0.9'/>
+        <circle cx='87' cy='25' r='3' fill='white' opacity='0.9'/>
+        <circle cx='95' cy='25' r='3' fill='white' opacity='0.9'/>
+      </svg>
+    </div>
+    <div id='chat-head-info'><b>&#x1F333; Nuez, tu asistente</b><span>Experta en frutos secos</span></div>
+    <button id='chat-close' onclick='toggleChat()'>&#x2715;</button>
+  </div>
+  <div id='chat-msgs'></div>
+  <div id='chat-suggs'>
+    <button class='sugg-btn' onclick='abrirBuscadorPrecios()'>&#x1F4B0; Precios</button>
+    <button class='sugg-btn' onclick='abrirPropiedades()'>&#x1F33F; Propiedades</button>
+    <button class='sugg-btn' onclick='askSugg(this)'>&#x1F69A; Tipos de entrega</button>
+    <button class='sugg-btn' onclick='abrirConsultame()'>&#x1F4AC; Consult&aacute;me</button>
+    <button class='sugg-btn' id='btnSabias' onclick='mostrarSabias()'>&#x1F4A1; &iquest;Sab&iacute;as que?</button>
+  </div>
+  <div id='chat-inp-row'>
+    <input id='chat-inp' type='text' placeholder='Preguntame algo...' onkeydown='if(event.key=="Enter")sendChat()'>
+    <button id='btnVozChat' onclick='comenzarDictadoChat()' style='width:40px;height:40px;border-radius:50%;background:white;border:1.5px solid var(--a);color:var(--a);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;'><i class='fa-solid fa-microphone'></i></button>
+    <button id='chat-send' onclick='sendChat()'><i class='fa-solid fa-paper-plane'></i></button>
+  </div>
+</div>
+<script>
+var db={'Pedido 1':{its:[],note:''}};
+var cur='Pedido 1',sDir=0,eye=false,lbCard=null,favs={};
+try{favs=JSON.parse(localStorage.getItem('favs_almacen'))||{};}catch(e){favs={};}
+window.onload=function(){renderFavList();iniciarMicGlobal();};
+function getQty(c){return parseInt(c.querySelector('.u-qty-txt').innerText)||0;}
+function setQty(c,q){
+  c.querySelectorAll('.u-qty').forEach(function(e){e.innerText=q;});
+  if(q>0)c.classList.add('selected');else c.classList.remove('selected');
+}
+function modQ(btn,v){
+  var c=btn.closest('.p-r'),q=getQty(c)+v;
+  if(q<0)q=0;setQty(c,q);sy();
+}
+function tp(el,o){
+  var st=el.getAttribute('data-h');
+  var u=el.closest('.p-precio-row').querySelector('.p-unidad');
+  if(st==='false'||!st){
+    var n=Math.round((o/2)*1.05);
+    el.innerHTML='$\u00a0'+n.toLocaleString('es-AR');
+    el.setAttribute('data-h','true');
+    u.textContent='0,5 kg';u.className='p-unidad medio';
+  }else if(st==='true'){
+    var n=Math.round((o/4)*1.05);
+    el.innerHTML='$\u00a0'+n.toLocaleString('es-AR');
+    el.setAttribute('data-h','quarter');
+    u.textContent='0,25 kg';u.className='p-unidad cuarto';
+  }else{
+    el.innerHTML='$\u00a0'+Math.round(o).toLocaleString('es-AR');
+    el.setAttribute('data-h','false');
+    u.textContent='1 kg';u.className='p-unidad';
+  }
+  sy();
+}
+function sy(){
+  var its=[];
+  document.querySelectorAll('.p-r').forEach(function(c){
+    var q=getQty(c);if(q>0){
+      var pE=c.querySelector('.p-val'),st=pE.getAttribute('data-h'),oP=parseFloat(pE.getAttribute('data-o'));
+      var precio=st==='true'?Math.round((oP/2)*1.05):st==='quarter'?Math.round((oP/4)*1.05):oP;
+      its.push({idx:c.getAttribute('data-idx'),n:c.querySelector('.p-name').getAttribute('data-n'),
+        img:c.getAttribute('data-img')||'',p:precio,q:q,h:st,o:oP});
+    }
+  });
+  if(!db[cur])db[cur]={its:[],note:''};
+  db[cur].its=its;bd();
+}
+function bd(){
+  var c=0;for(var k in db)(db[k].its||[]).forEach(function(it){c+=it.q;});
+  document.getElementById('qB').innerText=c;
+}
+function clUI_Only(){
+  document.querySelectorAll('.p-r').forEach(function(c){
+    c.classList.remove('selected');c.style.background='';
+    setQty(c,0);
+    var pE=c.querySelector('.p-val');
+    pE.setAttribute('data-h','false');
+    pE.innerHTML='$\u00a0'+parseFloat(pE.getAttribute('data-o')).toLocaleString('es-AR');
+    var u=c.querySelector('.p-unidad');
+    if(u){u.textContent='1 kg';u.className='p-unidad';}
+  });
+}
+function applyToUI(){
+  document.getElementById('oT').value=(db[cur]&&db[cur].note)?db[cur].note:'';
+  if(!db[cur])return;
+  (db[cur].its||[]).forEach(function(it){
+    var c=document.querySelector('.p-r[data-idx="'+it.idx+'"');
+    if(!c)return;setQty(c,it.q);
+    var pE=c.querySelector('.p-val'),oP=parseFloat(pE.getAttribute('data-o'));
+    var u=c.querySelector('.p-unidad');
+    if(it.h==='true'||it.h===true){
+      pE.setAttribute('data-h','true');
+      pE.innerHTML='$\u00a0'+Math.round((oP/2)*1.05).toLocaleString('es-AR');
+      if(u){u.textContent='0,5 kg';u.className='p-unidad medio';}
+    }else if(it.h==='quarter'){
+      pE.setAttribute('data-h','quarter');
+      pE.innerHTML='$\u00a0'+Math.round((oP/4)*1.05).toLocaleString('es-AR');
+      if(u){u.textContent='0,25 kg';u.className='p-unidad cuarto';}
+    }
+  });
+}
+function swO(n){
+  sy();cur=n;document.getElementById('curN').innerText=n;
+  clUI_Only();applyToUI();bd();clM('mS');
+}
+function openLB(card){
+  lbCard=card;
+  var img=card.getAttribute('data-img')||'';
+  var lb=document.getElementById('lightbox');
+  var lbImg=document.getElementById('lb-img');
+  if(img){lbImg.src=img;lbImg.style.display='block';}else{lbImg.style.display='none';}
+  document.getElementById('lb-name').innerText=card.querySelector('.p-name').getAttribute('data-n');
+  lbRefreshPrice();
+  document.getElementById('lb-qty').innerText=getQty(card);
+  lb.classList.add('open');lb.scrollTop=0;
+}
+function lbRefreshPrice(){
+  if(!lbCard)return;
+  var pE=lbCard.querySelector('.p-val'),st=pE.getAttribute('data-h'),o=parseFloat(pE.getAttribute('data-o'));
+  var v=document.getElementById('lb-val');
+  var u=document.getElementById('lb-unidad');
+  if(st==='true'){
+    v.innerHTML='$\u00a0'+Math.round((o/2)*1.05).toLocaleString('es-AR');
+    u.textContent='0,5 kg';u.className='medio';
+  }else if(st==='quarter'){
+    v.innerHTML='$\u00a0'+Math.round((o/4)*1.05).toLocaleString('es-AR');
+    u.textContent='0,25 kg';u.className='cuarto';
+  }else{
+    v.innerHTML='$\u00a0'+Math.round(o).toLocaleString('es-AR');
+    u.textContent='1 kg';u.className='';
+  }
+}
+function lbTogglePrice(){
+  if(!lbCard)return;
+  var pE=lbCard.querySelector('.p-val'),o=parseFloat(pE.getAttribute('data-o'));
+  tp(pE,o);lbRefreshPrice();
+}
+function lbModQ(v){
+  if(!lbCard)return;
+  var q=getQty(lbCard)+v;if(q<0)q=0;
+  setQty(lbCard,q);document.getElementById('lb-qty').innerText=q;sy();
+}
+function closeLB(){
+  document.getElementById('lightbox').classList.remove('open');lbCard=null;
+}
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLB();});
+function tot(){sy();renderCart();document.getElementById('mT').classList.add('open');}
+function renderCart(){
+  var t=0,h='',has=false;
+  for(var k in db){
+    if(!db[k].its||!db[k].its.length)continue;has=true;
+    h+='<div class="cart-group">'+k+'</div>';
+    db[k].its.forEach(function(it){
+      var s=it.p*it.q;t+=s;
+      var imgTag=it.img?'<img class="cart-item-img" data-src="'+it.img+'">':'<div class="cart-item-img ci-noimg"><i class="fa-solid fa-seedling"></i></div>';
+      h+='<div class="cart-item">';
+      h+=imgTag;
+      h+='<div class="cart-item-info"><div class="cart-item-name">'+(it.h==='true'||it.h===true?'<small style="color:#c0392b;">0,5 </small>':it.h==='quarter'?'<small style="color:#8e24aa;">0,25 </small>':'')+it.n+'</div>';
+      h+='<div class="cart-item-price">$'+s.toLocaleString('es-AR')+'<small style="color:#999;"> ($'+it.p.toLocaleString('es-AR')+'/u)</small></div></div>';
+      h+='<div class="cart-ctrl">';
+      h+='<button class="cc-btn del-btn" onclick="cartDel(\''+k+'\',\''+it.idx+'\')\"><i class="fa-solid fa-trash"></i></button>';
+      h+='<button class="cc-btn" onclick="cartQ(\''+k+'\',\''+it.idx+'\',-1)">&#8722;</button>';
+      h+='<span class="cc-qty">'+it.q+'</span>';
+      h+='<button class="cc-btn" onclick="cartQ(\''+k+'\',\''+it.idx+'\',1)">&#43;</button>';
+      h+='</div></div>';
+    });
+    if(db[k].note)h+='<div style="font-size:12px;color:#999;padding:6px 4px;">&#9997; '+db[k].note+'</div>';
+  }
+  var emptyMsg='<p style="color:#bbb;text-align:center;padding:30px 0;"><i class="fa-solid fa-cart-shopping" style="font-size:40px;"></i><br><br>El carrito est&aacute; vac&iacute;o</p>';
+  document.getElementById('lT').innerHTML=h||emptyMsg;
+  document.getElementById('mT-total').innerText=has?'TOTAL: $'+t.toLocaleString('es-AR'):'';
+  document.querySelectorAll('#lT img[data-src]').forEach(function(img){
+    img.src=img.getAttribute('data-src');
+    img.addEventListener('error',function(){
+      var d=document.createElement('div');
+      d.className='cart-item-img ci-noimg';
+      d.innerHTML='<i class="fa-solid fa-seedling"></i>';
+      if(this.parentNode)this.parentNode.replaceChild(d,this);
+    });
+  });
+}
+function cartQ(k,idx,v){
+  if(!db[k])return;
+  var it=db[k].its.find(function(x){return x.idx==idx;});
+  if(!it)return;
+  it.q=Math.max(0,it.q+v);
+  if(it.q===0)db[k].its=db[k].its.filter(function(x){return x.idx!=idx;});
+  var c=document.querySelector('.p-r[data-idx="'+idx+'"');
+  if(c)setQty(c,it.q);
+  bd();renderCart();
+}
+function cartDel(k,idx){
+  if(!db[k])return;
+  db[k].its=db[k].its.filter(function(x){return x.idx!=idx;});
+  var c=document.querySelector('.p-r[data-idx="'+idx+'"');
+  if(c)setQty(c,0);
+  bd();renderCart();
+}
+function mTClick(e){if(e.target===document.getElementById('mT'))document.getElementById('mT').classList.remove('open');}
+function saveNote(){if(!db[cur])db[cur]={its:[],note:''};db[cur].note=document.getElementById('oT').value;clM('mK');}
+function saveFav(){
+  sy();
+  var hasItems=false;
+  for(var k in db){if(db[k].its&&db[k].its.length){hasItems=true;break;}}
+  if(!hasItems){alert('El carrito est\u00e1 vac\u00edo. Agre\u00e1 productos antes de guardar.');return;}
+  var n=prompt('Nombre para guardar:');if(!n||!n.trim())return;
+  var now=new Date();
+  var fechaStr=now.getFullYear()+'-'+(now.getMonth()+1).toString().padStart(2,'0')+'-'+now.getDate().toString().padStart(2,'0');
+  var snap=JSON.parse(JSON.stringify(db));
+  snap._estado='amarillo';
+  snap._fechaGuardado=fechaStr;
+  snap._fechaEnvio='';
+  favs[n.trim()]=snap;
+  try{localStorage.setItem('favs_almacen',JSON.stringify(favs));}catch(e){}
+  renderFavList();alert('Guardado: '+n.trim());
+}
+function renderFavList(){
+  var el=document.getElementById('lFav');el.innerHTML='';
+  var keys=Object.keys(favs);
+  if(!keys.length){el.innerHTML='<p style="color:#999;padding:10px;">Sin favoritos guardados.</p>';return;}
+  keys.forEach(function(k){
+    var fav=favs[k];
+    var estado=fav._estado||'amarillo';
+    var fechaG=fav._fechaGuardado||'';
+    var fechaE=fav._fechaEnvio||'';
+    var row=document.createElement('div');
+    row.style.cssText='display:flex;align-items:center;gap:8px;padding:12px 8px;border-bottom:1px solid #eee;';
+    var dot=document.createElement('div');
+    dot.className='fav-estado '+estado;
+    dot.title=estado==='verde'?'Enviado por WhatsApp el '+fechaE:'Guardado, pendiente de envio';
+    var info=document.createElement('div');info.style.cssText='flex:1;min-width:0;';
+    var nombreSpan='<span style="cursor:pointer;font-size:15px;font-weight:bold;" onclick="loadFav(\''+k+'\')">'+k+'</span>';
+    var fechaSpan='<span class="fav-fecha">'+fechaG+(fechaE?' \u2192 env. '+fechaE:'')+'</span>';
+    info.innerHTML=nombreSpan+'<br>'+fechaSpan;
+    var ico=document.createElement('i');
+    ico.className='fa-solid fa-trash';ico.style.cssText='color:#e53935;cursor:pointer;padding:6px;';ico.dataset.key=k;
+    ico.addEventListener('click',function(e){e.stopPropagation();delFav(this.dataset.key);});
+    row.appendChild(dot);row.appendChild(info);row.appendChild(ico);
+    el.appendChild(row);
+  });
+}
+function loadFav(k){
+  if(!confirm('Recuperar: '+k+'?'))return;
+  var snap=JSON.parse(JSON.stringify(favs[k]));
+  delete snap._estado;delete snap._fechaGuardado;delete snap._fechaEnvio;
+  db=snap;
+  var keys=Object.keys(db);
+  cur=keys.length>0?keys[0]:'Pedido 1';
+  document.getElementById('curN').innerText=cur;
+  clUI_Only();applyToUI();bd();clM('mFav');
+}
+function delFav(k){
+  if(!confirm('Eliminar: '+k+'?'))return;
+  delete favs[k];
+  try{localStorage.setItem('favs_almacen',JSON.stringify(favs));}catch(e){}
+  renderFavList();
+}
+function renderCal(){
+  var body=document.getElementById('mCal-body');body.innerHTML='';
+  var hist=[];
+  try{hist=JSON.parse(localStorage.getItem('pedHist_almacen'))||[];}catch(e){}
+  if(!hist.length){body.innerHTML='<p style="color:#bbb;text-align:center;padding:30px;">Sin pedidos registrados.</p>';return;}
+  hist=hist.slice().reverse();
+  var mesActual='';
+  hist.forEach(function(p){
+    var mes=p.fecha.substring(0,7);
+    if(mes!==mesActual){
+      mesActual=mes;
+      var mh=document.createElement('div');mh.className='cal-month';
+      var partes=mes.split('-');var meses=['','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+      mh.innerText=meses[parseInt(partes[1])]+' '+partes[0];
+      body.appendChild(mh);
+    }
+    var row=document.createElement('div');row.className='cal-row';
+    var dot=document.createElement('div');dot.className='cal-dot '+(p.estado||'verde');
+    var info=document.createElement('div');info.className='cal-info';
+    var resumen=p.items?p.items.slice(0,2).map(function(i){return i.n;}).join(', ')+(p.items.length>2?' y '+(p.items.length-2)+' m\u00e1s':''):'';
+    info.innerHTML='<b>'+p.fecha+'</b> \u2014 $'+p.total.toLocaleString('es-AR')+'<small>'+resumen+'</small>';
+    row.appendChild(dot);row.appendChild(info);body.appendChild(row);
+  });
+}
+var _opMOrig=opM;
+function opM(id){
+  document.getElementById(id).style.display='flex';
+  if(id==='mS')rS();
+  if(id==='mCal')renderCal();
+}
+(function chk15dias(){
+  var hist=[];
+  try{hist=JSON.parse(localStorage.getItem('pedHist_almacen'))||[];}catch(e){}
+  if(!hist.length)return;
+  var ultimo=hist[hist.length-1];
+  var partes=ultimo.fecha.split('-');
+  var dUlt=new Date(parseInt(partes[0]),parseInt(partes[1])-1,parseInt(partes[2]));
+  var hoy=new Date();hoy.setHours(0,0,0,0);
+  var diff=Math.floor((hoy-dUlt)/(1000*60*60*24));
+  if(diff>=15){
+    var ya15=localStorage.getItem('alerta15_'+ultimo.fecha);
+    if(!ya15){
+      localStorage.setItem('alerta15_'+ultimo.fecha,'1');
+      var msg=encodeURIComponent('Ya han pasado 15 d\u00edas de tu \u00faltimo pedido de frutos secos, pedimos ?');
+      setTimeout(function(){window.open('https://wa.me/5491169056135?text='+msg,'_blank');},2000);
+    }
+  }
+})();
+function rS(){
+  var el=document.getElementById('lS');el.innerHTML='';
+  Object.keys(db).forEach(function(k){
+    var d=document.createElement('div');
+    d.style.cssText='padding:13px 10px;border-bottom:1px solid #eee;cursor:pointer;text-align:left;background:'+(k===cur?'#e0d4d0':'white')+';font-size:15px;';
+    d.innerHTML='<b>'+k+'</b> <span style="color:#999;font-size:13px;">('+(db[k].its?db[k].its.length:0)+' items)</span>';
+    d.dataset.key=k;d.addEventListener('click',function(){swO(this.dataset.key);});el.appendChild(d);
+  });
+}
+function snd(){
+  var hasItems=false;
+  for(var k in db){if(db[k].its&&db[k].its.length){hasItems=true;break;}}
+  if(!hasItems){alert('El carrito est\u00e1 vac\u00edo.');return;}
+  var t=0,m='Pedido Almacen Natural:\n';
+  var now=new Date();
+  var fechaStr=now.getFullYear()+'-'+(now.getMonth()+1).toString().padStart(2,'0')+'-'+now.getDate().toString().padStart(2,'0');
+  var items=[];
+  for(var k in db){
+    if(!db[k].its||!db[k].its.length)continue;
+    m+='\n['+k.toUpperCase()+']\n';
+    db[k].its.forEach(function(it){
+      var s=it.p*it.q;t+=s;
+      var pesoStr=it.h==='true'||it.h===true?'0,5 ':it.h==='quarter'?'0,25 ':'';
+      m+='- '+it.q+'x '+pesoStr+it.n+' ($'+s.toLocaleString('es-AR')+')\n';
+      items.push({n:it.n,q:it.q,peso:it.h==='true'||it.h===true?'0.5kg':it.h==='quarter'?'0.25kg':'1kg',p:s});
+    });
+    if(db[k].note)m+='Nota: '+db[k].note+'\n';
+  }
+  m+='\nTOTAL: $'+t.toLocaleString('es-AR');
+  window.open('https://wa.me/5491169056135?text='+encodeURIComponent(m),'_blank');
+  setTimeout(function(){
+    window.open('https://chat.whatsapp.com/HxzfIUd2IB1KUseWAt5N6h?text='+encodeURIComponent(m),'_blank');
+  },1500);
+  var pedKey=Object.keys(favs).find(function(k){
+    return favs[k]._estado==='amarillo'||!favs[k]._estado;
+  });
+  if(pedKey){
+    favs[pedKey]._estado='verde';
+    favs[pedKey]._fechaEnvio=fechaStr;
+    try{localStorage.setItem('favs_almacen',JSON.stringify(favs));}catch(e){}
+  }
+  var hist=[];
+  try{hist=JSON.parse(localStorage.getItem('pedHist_almacen'))||[];}catch(e){}
+  hist.push({fecha:fechaStr,items:items,total:t,estado:'verde'});
+  try{localStorage.setItem('pedHist_almacen',JSON.stringify(hist));}catch(e){}
+  renderFavList();
+}
+function clU_Full(){
+  if(!confirm('Borrar TODO el pedido?'))return;
+  db={'Pedido 1':{its:[],note:''}};cur='Pedido 1';
+  document.getElementById('curN').innerText=cur;
+  var sI=document.getElementById('sI');if(sI){sI.value='';}
+  document.querySelectorAll('.p-r').forEach(function(c){c.style.display='';});
+  clUI_Only();bd();
+}
+function cN(){
+  var n=document.getElementById('iN').value.trim();
+  if(!n){alert('Ingrese un nombre.');return;}
+  if(db[n]){alert('Ya existe.');return;}
+  db[n]={its:[],note:''};document.getElementById('iN').value='';
+  clM('mN');swO(n);
+}
+function ordBy(){
+  sDir=sDir===1?-1:1;
+  var btn=document.getElementById('btnOrd');
+  btn.innerHTML=sDir===1?'<i class="fa-solid fa-sort-alpha-down" id="icoOrd"></i> A \u2192 Z':'<i class="fa-solid fa-sort-alpha-up" id="icoOrd"></i> Z \u2192 A';
+  document.querySelectorAll('.grid').forEach(function(g){
+    var cards=Array.from(g.querySelectorAll('.p-r'));
+    cards.sort(function(a,b){var vA=a.querySelector('.p-name').getAttribute('data-n'),vB=b.querySelector('.p-name').getAttribute('data-n');return sDir===1?vA.localeCompare(vB,'es'):vB.localeCompare(vA,'es');});
+    cards.forEach(function(c){g.appendChild(c);});
+  });
+}
+function tglFiltSel(){
+  eye=!eye;var btn=document.getElementById('btnEye');
+  btn.style.background=eye?'var(--del)':'var(--a)';
+  btn.innerHTML=eye?'<i class="fa-solid fa-eye-slash"></i> Filtrar':'<i class="fa-solid fa-eye"></i> Filtrar';
+  document.querySelectorAll('.p-r').forEach(function(c){c.style.display=(eye&&getQty(c)===0)?'none':'';});
+}
+function filt_orig_removed(){}
+function clM(id){document.getElementById(id).style.display='none';}
+function clMClick(e,id){if(e.target===document.getElementById(id))clM(id);}
+function openDesc(btn){
+  var card=btn.closest('.p-r');
+  var name=card.querySelector('.p-name').getAttribute('data-n');
+  var desc=card.getAttribute('data-desc')||'';
+  document.getElementById('mDesc-title').innerHTML='<i class="fa-solid fa-circle-info" style="color:var(--a);margin-right:6px;"></i>'+name;
+  document.getElementById('mDesc-body').innerText=desc;
+  document.getElementById('mDesc').style.display='flex';
+}
+// === CHATBOT LOCAL ===
+var chatOpen=false,chatFirstOpen=true;
+var WALNUT_SVG='<svg viewBox=\'0 0 112 112\' xmlns=\'http://www.w3.org/2000/svg\'><circle cx=\'56\' cy=\'56\' r=\'56\' fill=\'#fff8ee\'/><ellipse cx=\'56\' cy=\'60\' rx=\'30\' ry=\'26\' fill=\'#c8872a\'/><ellipse cx=\'48\' cy=\'46\' rx=\'10\' ry=\'6\' fill=\'#e8a84a\' opacity=\'0.5\'/><path d=\'M56 36 Q58 60 56 84\' stroke=\'#8d5520\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\'/><path d=\'M28 62 Q56 58 84 62\' stroke=\'#8d5520\' stroke-width=\'1.5\' fill=\'none\'/><path d=\'M34 52 Q42 66 38 76\' stroke=\'#8d5520\' stroke-width=\'1.2\' fill=\'none\' opacity=\'0.6\'/><path d=\'M78 52 Q70 66 74 76\' stroke=\'#8d5520\' stroke-width=\'1.2\' fill=\'none\' opacity=\'0.6\'/><rect x=\'49\' y=\'28\' width=\'14\' height=\'10\' rx=\'4\' fill=\'#6b3f10\'/><path d=\'M51 32 Q56 24 61 32\' stroke=\'#4a2a08\' stroke-width=\'1.5\' fill=\'none\' stroke-linecap=\'round\'/><circle cx=\'46\' cy=\'56\' r=\'7\' fill=\'white\'/><circle cx=\'66\' cy=\'56\' r=\'7\' fill=\'white\'/><circle cx=\'47\' cy=\'57\' r=\'4\' fill=\'#3a2010\'/><circle cx=\'67\' cy=\'57\' r=\'4\' fill=\'#3a2010\'/><circle cx=\'48\' cy=\'55\' r=\'1.5\' fill=\'white\'/><circle cx=\'68\' cy=\'55\' r=\'1.5\' fill=\'white\'/><path d=\'M44 70 Q56 78 68 70\' stroke=\'#6b3f10\' stroke-width=\'2.5\' fill=\'none\' stroke-linecap=\'round\'/><ellipse cx=\'38\' cy=\'68\' rx=\'7\' ry=\'4\' fill=\'#e07030\' opacity=\'0.28\'/><ellipse cx=\'74\' cy=\'68\' rx=\'7\' ry=\'4\' fill=\'#e07030\' opacity=\'0.28\'/></svg>';
+var KB=[
+  {k:['pedido','pedir','comprar','compra','hacer','hago','inicio','empiezo','arrancar','quiero','solicitar'],
+   r:'\uD83D\uDED2 <b>C\u00f3mo hacer un pedido:</b><br>1\uFE0F\u20E3 Elegí los productos del cat\u00e1logo y sumales la cantidad.<br>2\uFE0F\u20E3 Tocá el carrito \uD83D\uDECD\uFE0F para revisar tu pedido.<br>3\uFE0F\u20E3 Presioná <b>Enviar por WhatsApp</b> y te llega el resumen listo para mandar.<br><br>\uD83D\uDCAC O si quer\u00e9s, escribinos directo al <a href="https://wa.me/5491169056135" target="_blank" style="color:var(--p);font-weight:bold;">WhatsApp \u260E\uFE0F 11 3181-5778</a>'},
+  {k:['whatsapp','contacto','llamar','escribir','escribi','mensaje','chat','comunicar','telefono','numero'],
+   r:'\uD83D\uDCAC Pod\u00e9s contactarnos por <b>WhatsApp</b> al <a href="https://wa.me/5491169056135" target="_blank" style="color:var(--p);font-weight:bold;">11 3181-5778</a>.<br>Respondemos de <b>lunes a s\u00e1bado de 9 a 20hs</b>. \uD83D\uDC4B'},
+  {k:['pago','pagar','abonar','transferencia','efectivo','mercado','mp','tarjeta','medio'],
+   r:'\uD83D\uDCB3 <b>Medios de pago:</b><br>\u2705 Transferencia bancaria / Alias<br>\u2705 Mercado Pago<br>\u2705 Efectivo al momento de la entrega<br><br>Una vez confirmado el pedido te pasamos los datos de pago por WhatsApp.'},
+  {k:['envio','entrega','delivery','mando','despacho','llega','domicilio','zona','lugar','caba','gba','buenos aires','barrio'],
+   r:'\uD83D\uDE9A <b>Entrega a domicilio:</b><br>\uD83D\uDCCD Zona de cobertura: <b>CABA y GBA</b><br>\uD83D\uDCE6 El pedido lo coordinamos por WhatsApp para acordar d\u00eda y horario.<br>\uD83D\uDCB0 El costo de env\u00edo depende de la zona, te lo informamos al confirmar.<br><br>Tambi\u00e9n pod\u00e9s coordinar <b>retiro en persona</b>. Consult\u00e1nos al <a href="https://wa.me/5491169056135" target="_blank" style="color:var(--p);font-weight:bold;">11 3181-5778</a>'},
+  {k:['minimo','m\u00ednimo','monto','valor minimo','desde cuanto','cuanto minimo'],
+   r:'\uD83D\uDCB0 El <b>pedido m\u00ednimo</b> es de <b>$5.000</b>.<br>Eso equivale aproximadamente a 1 kg de producto, dependiendo del fruto seco que elijas.'},
+  {k:['precio','precios','costo','cuanto sale','cuanto cuesta','valor','plata','caro','barato'],
+   r:'\uD83C\uDFF7\uFE0F Los <b>precios est\u00e1n en el cat\u00e1logo</b> y son <b>por kilo</b>.<br>Tambi\u00e9n pod\u00e9s pedir <b>medio kilo</b>: toc\u00e1 el precio del producto para cambiarlo.<br><br>Los precios se actualizan regularmente. Para consultas especiales de mayor volumen, escribinos al <a href="https://wa.me/5491169056135" target="_blank" style="color:var(--p);font-weight:bold;">WhatsApp</a>.'},
+  {k:['kilo','medio kilo','presentacion','presentaci\u00f3n','cantidad','gramos','medida'],
+   r:'\u2696\uFE0F <b>Presentaciones disponibles:</b><br>\u2022 <b>1 kg</b> \u2192 precio que ves en el cat\u00e1logo<br>\u2022 <b>0,5 kg (medio kilo)</b> \u2192 toc\u00e1 el precio una vez<br>\u2022 <b>0,25 kg (cuarto kilo)</b> \u2192 toc\u00e1 el precio dos veces<br><br>El precio de fracciones incluye un peque\u00f1o recargo del 5% por fraccionamiento.'},
+  {k:['producto','productos','que tienen','que venden','catalogo','cat\u00e1logo','lista','variedad','ofrecen','hay'],
+   r:'\uD83C\uDF3F <b>Tenemos una amplia variedad de frutos secos y productos naturales</b>, organizados por secciones en el cat\u00e1logo.<br><br>Podés <b>buscar por nombre</b> usando la barra de arriba, o navegar sección por sección. \uD83D\uDC46<br><br>\u00bfBusc\u00e1s algo en particular? \u00a1Contame y te ayudo!'},
+  {k:['conservar','conservacion','conservaci\u00f3n','guardar','almacenar','vencimiento','vence','dura','duracion'],
+   r:'\uD83C\uDFFA <b>C\u00f3mo conservar tus frutos secos:</b><br>\u2705 Guard\u00e1los en <b>recipiente herm\u00e9tico</b><br>\u2705 En lugar <b>fresco, seco y sin luz directa</b><br>\u2705 Una vez abiertos, ideal en la <b>heladera</b> en verano<br>\uD83D\uDCC5 La duraci\u00f3n promedio es de <b>3 a 6 meses</b> en buenas condiciones.'},
+  {k:['propiedades','beneficios','saludable','salud','nutricion','nutrici\u00f3n','vitaminas','proteinas','prote\u00ednas','energia','energ\u00eda','bueno para'],
+   r:'\uD83D\uDCAA <b>Beneficios de los frutos secos:</b><br>\u2022 Ricos en <b>grasas saludables</b> (omega 3 y 6)<br>\u2022 Fuente de <b>prote\u00ednas vegetales</b><br>\u2022 Aportan <b>fibra, vitaminas y minerales</b><br>\u2022 Ideales para snacks, repostería y cocina<br>\u2022 Ayudan al sistema cardiovascular y cerebral<br><br>Cada producto en el cat\u00e1logo puede tener m\u00e1s info toc\u00e1ndo el bot\u00f3n \u2139\uFE0F <b>Info</b>.'},
+  {k:['descuento','oferta','promo','promocion','promoci\u00f3n','mayorista','mayor','volumen','cantidad grande'],
+   r:'\uD83C\uDF81 Para <b>compras por mayor o en volumen</b>, consult\u00e1nos directamente por WhatsApp al <a href="https://wa.me/5491169056135" target="_blank" style="color:var(--p);font-weight:bold;">11 3181-5778</a> y te damos un precio especial. \uD83D\uDE0A'},
+  {k:['hola','buenas','buen dia','buen d\u00eda','buenas tardes','buenas noches','que tal','como estan','c\u00f3mo est\u00e1n'],
+   r:'\uD83D\uDC4B \u00a1Hola! Bienvenido/a a <b>Almac\u00e9n Natural</b>. \uD83C\uDF3F<br>Soy <b>Nuez</b>, tu asistente virtual. Puedo ayudarte con:<br>\u2022 C\u00f3mo hacer un pedido<br>\u2022 Precios y presentaciones<br>\u2022 Entrega y m\u00e9todos de pago<br>\u2022 Propiedades de los productos<br><br>\u00bfEn qu\u00e9 te puedo ayudar?'},
+  {k:['gracias','gracia','gracie','genial','perfecto','buenisimo','buen\u00edsimo','excelente','copado','re bien'],
+   r:'\uD83D\uDE0A \u00a1De nada! Si ten\u00e9s m\u00e1s preguntas, ac\u00e1 estoy. \uD83C\uDF30<br>Y si quer\u00e9s hacer un pedido, pod\u00e9s escribirnos al <a href="https://wa.me/5491169056135" target="_blank" style="color:var(--p);font-weight:bold;">WhatsApp 11 3181-5778</a>. \uD83D\uDE4C'}
+];
+function norm(s){
+  var r='',map={'a':['á','à','ä','â'],'e':['é','è','ë','ê'],'i':['í','ì','ï','î'],'o':['ó','ò','ö','ô'],'u':['ú','ù','ü','û'],'n':['ñ']};
+  s=s.toLowerCase();
+  for(var i=0;i<s.length;i++){
+    var c=s[i],found=false;
+    for(var k in map){if(map[k].indexOf(c)>-1){r+=k;found=true;break;}}
+    if(!found)r+=c;
+  }
+  return r;
+}
+function localSearch(txt){
+  var q=norm(txt);
+  var best=null,bestScore=0;
+  KB.forEach(function(entry){
+    var score=0;
+    entry.k.forEach(function(kw){
+      if(q.includes(norm(kw)))score++;
+    });
+    if(score>bestScore){bestScore=score;best=entry.r;}
+  });
+  if(bestScore>0)return best;
+  var raw=txt.trim();
+  var starStart=raw.startsWith('*'),starEnd=raw.endsWith('*');
+  var term=norm(raw.replace(/^\*|\*$/g,''));
+  if(term.length<2)return '\uD83E\uDD14 Escrib\u00ed el nombre de un producto para consultar su precio. Ejemplos:<br>\u2022 <b>Nueces</b> \u2192 b\u00fasqueda exacta<br>\u2022 <b>Nueces*</b> \u2192 empieza con Nueces<br>\u2022 <b>*Nueces</b> \u2192 termina con Nueces<br>\u2022 <b>*Nueces*</b> \u2192 contiene Nueces';
+  var matches=[];
+  document.querySelectorAll('.p-r').forEach(function(card){
+    var rawName=card.querySelector('.p-name').getAttribute('data-n');
+    var name=norm(rawName);
+    var hit=false;
+    if(starStart&&starEnd){hit=name.includes(term);}
+    else if(starStart){hit=name.endsWith(term);}
+    else if(starEnd){hit=name.startsWith(term);}
+    else{hit=(name===term);}
+    if(hit){
+      var price=parseFloat(card.querySelector('.p-val').getAttribute('data-o'));
+      var desc=card.getAttribute('data-desc')||'';
+      matches.push({n:rawName,p:price,d:desc});
+    }
+  });
+  if(matches.length===0)return '\uD83E\uDD14 No encontr\u00e9 productos con ese nombre. Prob\u00e1 con <b>*palabra*</b> para buscar por contenido, o consult\u00e1nos al <a href="https://wa.me/5491169056135" target="_blank" style="color:var(--p);font-weight:bold;">WhatsApp</a>.';
+  var out='\uD83C\uDFF7\uFE0F <b>'+matches.length+' producto'+(matches.length>1?'s':'')+'</b> encontrado'+(matches.length>1?'s':'')+':<br><br>';
+  matches.forEach(function(m){
+    out+='\uD83C\uDF30 <b>'+m.n+'</b> \u2014 <b style="color:#3a6b2a;">$'+m.p.toLocaleString('es-AR')+'/kg</b>';
+    if(m.d)out+='<br><small style="color:#888;">'+m.d.substring(0,60)+(m.d.length>60?'...':'')+'</small>';
+    out+='<br>';
+  });
+  out+='<br><small>Para pedir, sum\u00e1lo desde el cat\u00e1logo o escrib\u00ednos al <a href="https://wa.me/5491169056135" target="_blank" style="color:var(--p);font-weight:bold;">WhatsApp</a>.</small>';
+  return out;
+}
+function toggleChat(){
+  chatOpen=!chatOpen;
+  var win=document.getElementById('chat-win');
+  var fab=document.getElementById('chat-fab');
+  var notif=document.getElementById('chat-notif');
+  if(chatOpen){
+    win.classList.add('open');
+    notif.style.display='none';
+    fab.style.animation='none';
+    if(chatFirstOpen){chatFirstOpen=false;botGreet();}
+    setTimeout(function(){document.getElementById('chat-inp').focus();},300);
+  }else{
+    win.classList.remove('open');
+    fab.style.animation='walnut-bounce 2.5s ease-in-out infinite,walnut-pulse 2.5s ease-in-out infinite';
+  }
+}
+function botGreet(){
+  addMsg('bot','\uD83C\uDF30 \u00a1Hola! Soy <b>Nuez</b>, la asistente de Almac\u00e9n Natural.<br>Puedo ayudarte con pedidos, precios, entregas y m\u00e1s. \u00bfEn qu\u00e9 te ayudo?');
+}
+function addMsg(role,html){
+  var msgs=document.getElementById('chat-msgs');
+  var div=document.createElement('div');
+  div.className='cm '+role;
+  if(role==='bot'){
+    div.innerHTML='<div class="cm-ico">'+WALNUT_SVG+'</div><div class="cm-bub">'+html+'</div>';
+  }else{
+    div.innerHTML='<div class="cm-bub">'+html+'</div>';
+  }
+  msgs.appendChild(div);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+function showTyping(){
+  var msgs=document.getElementById('chat-msgs');
+  var div=document.createElement('div');
+  div.className='cm bot';div.id='chat-typing';
+  div.innerHTML='<div class="cm-ico">'+WALNUT_SVG+'</div><div class="cm-bub"><div class="typing-ind"><span></span><span></span><span></span></div></div>';
+  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
+}
+function hideTyping(){var t=document.getElementById('chat-typing');if(t)t.remove();}
+function askSugg(btn){
+  var text=btn.innerText.replace(/^[^\w\u00C0-\u024F]+/,'').trim();
+  document.getElementById('chat-inp').value=text;
+  sendChat();
+}
+var CONTEXTO='Me haces el pedido y te aviso cuando esta disponible, y luego coordinamos si lo pasas a buscar o te lo enviÃ³.<br>Las presentaciones son por kilo o medio kilo.<br>';
+var chatMode='normal';
+function abrirPropiedades(){
+  var inp=document.getElementById('chat-inp');
+  var txt=inp.value.trim();
+  if(txt.length>0){
+    inp.value='';
+    addMsg('usr','\uD83C\uDF3F Propiedades: '+txt);
+    showTyping();
+    setTimeout(function(){
+      hideTyping();
+      var termN=norm(txt);
+      var termF=fonetica(termN);
+      var palQ=termN.split(/\s+/).filter(function(w){return w.length>1;});
+      var palQF=palQ.map(function(w){return fonetica(w);});
+      var found=[];
+      document.querySelectorAll('.p-r').forEach(function(card){
+        var rawName=card.querySelector('.p-name').getAttribute('data-n');
+        var nn=norm(rawName);var nf=fonetica(nn);
+        var hit=nn.includes(termN)||nf.includes(termF);
+        if(!hit&&palQ.length>0){
+          for(var largo=palQ.length;largo>=1&&!hit;largo--){
+            for(var ini=0;ini<=palQ.length-largo&&!hit;ini++){
+              if(_fraseFoneticaEnNombre(palQ.slice(ini,ini+largo),palQF.slice(ini,ini+largo),nn,nf))hit=true;
+            }
+          }
+        }
+        if(hit){var desc=card.getAttribute('data-desc')||'';found.push({n:rawName,d:desc});}
+      });
+      if(found.length===0){addMsg('bot','\uD83E\uDD14 No encontr\u00e9 <b>'+txt+'</b> en el cat\u00e1logo. Prob\u00e1 con otra palabra.');return;}
+      var out='';
+      found.forEach(function(f){
+        out+='\uD83C\uDF30 <b>'+f.n+'</b><br>';
+        out+=f.d?f.d:'<small style="color:#999;">Sin informaci\u00f3n de propiedades cargada.</small>';
+        out+='<br><br>';
+      });
+      addMsg('bot',out);
+    },500);
+  }else{
+    chatMode='propiedades';
+    addMsg('bot','\uD83C\uDF3F <b>Propiedades de los frutos secos</b><br><br>\uD83D\uDCAA <b>Beneficios generales:</b><br>\u2022 Ricos en <b>grasas saludables</b> (omega 3 y 6) que cuidan el coraz\u00f3n<br>\u2022 Fuente de <b>prote\u00ednas vegetales</b> de alta calidad<br>\u2022 Aportan <b>fibra</b> que mejora la digesti\u00f3n<br>\u2022 Contienen <b>vitaminas E, B y minerales</b> como magnesio, zinc y selenio<br>\u2022 Antioxidantes que retardan el envejecimiento celular<br><br>\uD83D\uDD0D <b>Escrib\u00ed un producto</b> para ver sus propiedades espec\u00edficas, o <b>salir</b> para volver.');
+    document.getElementById('chat-inp').placeholder='Ej: almendra, nuez, chia...';
+    document.getElementById('chat-inp').focus();
+  }
+}
+function abrirBuscadorPrecios(){
+  chatMode='precios';
+  addMsg('bot','\uD83C\uDFF7\uFE0F <b>Buscador de precios</b><br>Escrib\u00ed el nombre o parte del nombre del producto y te muestro todos los que coincidan.<br><br><small style="color:#999;">Escrib\u00ed <b>salir</b> para volver al men\u00fa.</small>');
+  document.getElementById('chat-inp').placeholder='Ej: nuez, almendra, mani...';
+  document.getElementById('chat-inp').focus();
+}
+function abrirConsultame(){
+  chatMode='consultame';
+  addMsg('bot','\uD83D\uDCAC <b>Consult\u00e1me lo que quieras</b> sobre nuestros productos, formas de pago, entregas o cualquier duda del negocio.<br><br><small style="color:#999;">Escrib\u00ed <b>salir</b> para volver al men\u00fa.</small>');
+  document.getElementById('chat-inp').placeholder='Escrib\u00ed tu consulta...';
+  document.getElementById('chat-inp').focus();
+}
+function sendChat(){
+  var inp=document.getElementById('chat-inp');
+  var txt=inp.value.trim();if(!txt)return;
+  inp.value='';
+  if(chatMode!=='normal'&&txt.toLowerCase()==='salir'){
+    chatMode='normal';
+    document.getElementById('chat-inp').placeholder='Preguntame algo...';
+    addMsg('usr','salir');
+    addMsg('bot','\uD83D\uDD19 Volviste al men\u00fa principal. \u00bfEn qu\u00e9 m\u00e1s te ayudo?');
+    return;
+  }
+  var chatModePrev=chatMode;
+  addMsg('usr',txt);
+  showTyping();
+  setTimeout(function(){
+    hideTyping();
+    if(chatModePrev==='precios'){addMsg('bot',buscarPrecio(txt));}
+    else if(chatModePrev==='consultame'){addMsg('bot',responderConsulta(txt));}
+    else if(chatModePrev==='propiedades'){
+      var term=norm(txt);
+      var found=[];
+      document.querySelectorAll('.p-r').forEach(function(card){
+        var rawName=card.querySelector('.p-name').getAttribute('data-n');
+        if(norm(rawName).includes(term)){
+          var desc=card.getAttribute('data-desc')||'';
+          found.push({n:rawName,d:desc});
+        }
+      });
+      if(found.length===0){addMsg('bot','\uD83E\uDD14 No encontr\u00e9 <b>'+txt+'</b>. Prob\u00e1 con otra palabra.');}
+      else{
+        var out='';
+        found.forEach(function(f){
+          out+='\uD83C\uDF30 <b>'+f.n+'</b><br>';
+          out+=f.d?f.d:'<small style="color:#999;">Sin info de propiedades cargada.</small>';
+          out+='<br><br>';
+        });
+        addMsg('bot',out);
+      }
+    }
+    else{addMsg('bot',localSearch(txt));}
+  },600);
+}
+function buscarPrecio(txt){
+  var term=norm(txt.trim());
+  var termF=fonetica(term);
+  if(term.length<2)return '\uD83E\uDD14 Escrib\u00ed al menos 2 letras para buscar.';
+  var matches=[];
+  document.querySelectorAll('.p-r').forEach(function(card){
+    var rawName=card.querySelector('.p-name').getAttribute('data-n');
+    var nn=norm(rawName);
+    var nf=fonetica(nn);
+    if(nn.includes(term)||nf.includes(termF)||termF.includes(fonetica(nn.split(' ')[0]))){
+      var price=parseFloat(card.querySelector('.p-val').getAttribute('data-o'));
+      var desc=card.getAttribute('data-desc')||'';
+      matches.push({n:rawName,p:price,d:desc});
+    }
+  });
+  if(matches.length===0)return '\uD83E\uDD14 No encontr\u00e9 productos con <b>'+txt.trim()+'</b>. Prob\u00e1 con otra palabra.';
+  var out='\uD83C\uDFF7\uFE0F <b>'+matches.length+' producto'+(matches.length>1?'s':'')+'</b> encontrado'+(matches.length>1?'s':'')+':<br><br>';
+  matches.forEach(function(m){
+    out+='\uD83C\uDF30 <b>'+m.n+'</b> \u2014 <b style="color:#3a6b2a;">$'+m.p.toLocaleString('es-AR')+'/kg</b>';
+    if(m.d)out+='<br><small style="color:#888;">'+m.d.substring(0,60)+(m.d.length>60?'...':'')+'</small>';
+    out+='<br>';
+  });
+  out+='<br><small>Para pedir, sum\u00e1lo del cat\u00e1logo o escrib\u00ednos al <a href="https://wa.me/5491169056135" target="_blank" style="color:var(--p);font-weight:bold;">WhatsApp</a>.</small>';
+  return out;
+}
+function responderConsulta(txt){
+  var q=norm(txt);
+  var best=null,bestScore=0;
+  KB.forEach(function(entry){
+    var score=0;
+    entry.k.forEach(function(kw){if(q.includes(norm(kw)))score++;});
+    if(score>bestScore){bestScore=score;best=entry.r;}
+  });
+  if(bestScore>0)return best;
+  if(CONTEXTO){
+    var lineas=CONTEXTO.split('<br>');
+    var relevantes=[];
+    lineas.forEach(function(linea){
+      var l=norm(linea);
+      var words=q.split(' ').filter(function(w){return w.length>3;});
+      var matches=words.filter(function(w){return l.includes(w);}).length;
+      if(matches>0)relevantes.push({t:linea,s:matches});
+    });
+    if(relevantes.length>0){
+      relevantes.sort(function(a,b){return b.s-a.s;});
+      var resp='\uD83D\uDCCC ';
+      resp+=relevantes.slice(0,3).map(function(r){return r.t;}).join('<br>');
+      resp+='<br><br><small>Para m\u00e1s info escrib\u00ednos al <a href="https://wa.me/5491169056135" target="_blank" style="color:var(--p);font-weight:bold;">WhatsApp</a>.</small>';
+      return resp;
+    }
+  }
+  return '\uD83E\uDD14 No tengo esa info todav\u00eda. Consult\u00e1nos directamente por <a href="https://wa.me/5491169056135" target="_blank" style="color:var(--p);font-weight:bold;">WhatsApp al 11 3181-5778</a> y te respondemos enseguida. \uD83D\uDE0A';
+}
+var _sabiasIdx=0;
+var SABIAS=[
+  '\uD83C\uDF30 Las <b>nueces</b> son uno de los pocos alimentos vegetales con omega-3, el mismo que tiene el salmón. ¡Con un puñadito al día ya estás cubierto!',
+  '\uD83C\uDF31 Las <b>almendras</b> son la fuente vegetal más rica en vitamina E, un antioxidante clave para la piel y el sistema inmune.',
+  '\u2764\uFE0F El <b>maní</b> técnicamente es una legumbre, ¡no un fruto seco! Pero tiene más proteínas que cualquier nuez verdadera.',
+  '\uD83D\uDCA4 Los <b>pistachos</b> tienen un aminoácido llamado triptófano que ayuda a producir serotonina y mejorar el sueño.',
+  '\uD83E\uDDAA Las <b>nueces de cajú</b> (castañas de cajú) son de las pocas frutas donde la semilla crece por fuera del fruto. La manzana de cajú es comestible y muy popular en Brasil.',
+  '\uD83D\uDCB0 El <b>azafrán</b> es la especia más cara del mundo: se necesitan unas 150.000 flores para obtener 1 kg de especia.',
+  '\uD83D\uDCAA Los <b>frutos secos</b> consumidos regularmente reducen el riesgo de enfermedades cardiovasculares hasta un 30%, según múltiples estudios.',
+  '\uD83C\uDF35 Las <b>semillas de chía</b> absorben hasta 12 veces su peso en agua, formando un gel que ayuda a la digestión y la hidratación.',
+  '\u2600\uFE0F Las <b>semillas de girasol</b> siguen el movimiento del sol mientras crecen. De ahí viene su nombre en inglés: sunflower.',
+  '\uD83E\uDD5C El <b>sésamo</b> es uno de los cultivos oleaginosos más antiguos del mundo, con más de 5.000 años de historia en Asia y Oriente Medio.',
+  '\uD83C\uDF36\uFE0F Los <b>piñones</b> son las semillas del pino piñonero y tardan hasta 3 años en madurar dentro del piñón, ¡por eso son tan caros!',
+  '\uD83C\uDF3B Las <b>nueces de macadamia</b> tienen la cáscara más dura del reino vegetal: se necesita una presión de 300 kg para romperlas.'
+];
+function mostrarSabias(){
+  var tip=SABIAS[_sabiasIdx%SABIAS.length];
+  _sabiasIdx++;
+  addMsg('usr','\uD83D\uDCA1 \u00bfSab\u00edas que?');
+  showTyping();
+  setTimeout(function(){hideTyping();addMsg('bot',tip);},500);
+}
+function fonetica(s){
+  return s.toLowerCase()
+    .replace(/ph/g,'f')
+    .replace(/qu/g,'k')
+    .replace(/gu([ei])/g,'g$1')
+    .replace(/ll/g,'y')
+    .replace(/ce|ci/g,'se')
+    .replace(/za|zo|zu/g,function(m){return m.replace('z','s');})
+    .replace(/h/g,'')
+    .replace(/v/g,'b')
+    .replace(/x/g,'s')
+    .replace(/[aeiou]+/g,function(m){return m[0];})
+    .replace(/[^a-z]/g,'');
+}
+function bep(veces){
+  veces=veces||1;
+  try{
+    var ctx=new(window.AudioContext||window.webkitAudioContext)();
+    function unBep(delay){
+      var o=ctx.createOscillator();
+      var g=ctx.createGain();
+      o.connect(g);g.connect(ctx.destination);
+      o.frequency.value=880;
+      o.type='sine';
+      g.gain.setValueAtTime(0.25,ctx.currentTime+delay);
+      g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+delay+0.18);
+      o.start(ctx.currentTime+delay);
+      o.stop(ctx.currentTime+delay+0.18);
+    }
+    for(var i=0;i<veces;i++)unBep(i*0.25);
+  }catch(e){}
+}
+function _fraseFoneticaEnNombre(palabras,palabrasF,nn,nf){
+  var palNom=nn.split(/\s+/);
+  var palNomF=palNom.map(function(w){return fonetica(w);});
+  var n=palabras.length,m=palNom.length;
+  if(n===0||m===0)return false;
+  for(var start=0;start<=m-n;start++){
+    var ok=true;
+    for(var j=0;j<n;j++){
+      var nwF=palNomF[start+j],qwF=palabrasF[j];
+      var nw=palNom[start+j],qw=palabras[j];
+      if(nw===qw||nwF===qwF||(nwF.length>=3&&(nwF.includes(qwF)||qwF.includes(nwF))))continue;
+      ok=false;break;
+    }
+    if(ok)return true;
+  }
+  return false;
+}
+function filtFonetico(q){
+  var termN=norm(q);
+  var palQ=termN.split(/\s+/).filter(function(w){return w.length>1;});
+  var palQF=palQ.map(function(w){return fonetica(w);});
+  if(palQ.length===0){document.querySelectorAll('.p-r').forEach(function(c){c.style.display='';});return;}
+  var resultados=[];
+  document.querySelectorAll('.p-r').forEach(function(c){
+    var nombre=c.querySelector('.p-name').getAttribute('data-n');
+    var nn=norm(nombre);
+    var nf=fonetica(nn);
+    var nivel=0;
+    for(var largo=palQ.length;largo>=1;largo--){
+      var encontroFrase=false;
+      for(var ini=0;ini<=palQ.length-largo;ini++){
+        var sub=palQ.slice(ini,ini+largo);
+        var subF=palQF.slice(ini,ini+largo);
+        if(_fraseFoneticaEnNombre(sub,subF,nn,nf)){encontroFrase=true;break;}
+      }
+      if(encontroFrase){nivel=largo;break;}
+    }
+    resultados.push({c:c,nivel:nivel});
+  });
+  var maxNivel=0;
+  resultados.forEach(function(r){if(r.nivel>maxNivel)maxNivel=r.nivel;});
+  resultados.forEach(function(r){
+    r.c.style.display=(maxNivel>0&&r.nivel===maxNivel)?'':'none';
+  });
+}
+function filt(){
+  var q=document.getElementById('sI').value.trim();
+  if(!q){document.querySelectorAll('.p-r').forEach(function(c){c.style.display='';});return;}
+  filtFonetico(q);
+}
+var _recGlobal=null,_micGlobalActivo=false;
+var _micVisible=false;
+function _setMicUI(on){
+  var b1=document.getElementById('btnVoz');
+  var b2=document.getElementById('btnVozChat');
+  if(b1){b1.style.color=on?'red':'var(--p)';b1.innerHTML=on?'<i class="fa-solid fa-circle-dot"></i>':'<i class="fa-solid fa-microphone"></i>';}
+  if(b2){b2.style.color=on?'red':'var(--a)';b2.style.borderColor=on?'red':'var(--a)';b2.innerHTML=on?'<i class="fa-solid fa-circle-dot"></i>':'<i class="fa-solid fa-microphone"></i>';}
+}
+var _cmdsVoz=[
+  {k:['limpiar','limpiar todo','borrar todo','borrar pedido','vaciar'],fn:function(){if(confirm('Borrar TODO el pedido?')){db={'Pedido 1':{its:[],note:''}};cur='Pedido 1';document.getElementById('curN').innerText=cur;var sI=document.getElementById('sI');if(sI){sI.value='';}document.querySelectorAll('.p-r').forEach(function(c){c.style.display='';});clUI_Only();bd();}}},
+  {k:['ordenar','orden','ordenar a z','ordenar z a','alfabetico','alfabética'],fn:function(){ordBy();}},
+  {k:['filtrar','filtro','ver seleccionados','mostrar seleccionados','solo pedido'],fn:function(){tglFiltSel();}},
+  {k:['nuevo','nuevo pedido','nuevo sub pedido','crear pedido'],fn:function(){opM('mN');}},
+  {k:['carrito','ver carrito','mostrar carrito','mi carrito','ver pedido'],fn:function(){tot();}},
+  {k:['enviar','enviar pedido','enviar por whatsapp','mandar pedido','whatsapp'],fn:function(){snd();}},
+  {k:['hablame','habl\u00e1me','dictar pedido','pedido por voz'],fn:function(){abrirHabla();}},
+  {k:['chatbot','chat','asistente','nuez','abrir chat','consulta'],fn:function(){if(!chatOpen)toggleChat();}},
+  {k:['cerrar','cerrar chat','cerrar carrito','cerrar todo'],fn:function(){
+    document.getElementById('mT').classList.remove('open');
+    if(chatOpen)toggleChat();
+    document.getElementById('mHabla').classList.remove('open');
+  }},
+  {k:['favoritos','mis favoritos','guardados'],fn:function(){opM('mFav');}},
+  {k:['historial','pedidos anteriores','mis pedidos'],fn:function(){opM('mCal');}},
+  {k:['nota','agregar nota','a\u00f1adir nota'],fn:function(){opM('mK');}},
+  {k:['buscar','buscar producto','quiero buscar'],fn:function(){document.getElementById('sI').focus();}},
+];
+function _despacharFragmento(raw){
+  if(!raw||raw.length<2)return;
+  var txt=raw.toLowerCase().trim();
+  var txtN=norm(txt);
+  var cmdMatch=null,cmdScore=0;
+  _cmdsVoz.forEach(function(cmd){
+    cmd.k.forEach(function(kw){
+      var kwN=norm(kw);
+      var kwF=fonetica(kwN);
+      var txtF=fonetica(txtN);
+      if(txtN===kwN||txtN.includes(kwN)||kwN.includes(txtN)){if(3>cmdScore){cmdScore=3;cmdMatch=cmd;}}
+      else if(txtF===kwF||(kwF.length>3&&txtF.includes(kwF))){if(2>cmdScore){cmdScore=2;cmdMatch=cmd;}}
+    });
+  });
+  if(cmdMatch&&cmdScore>=2){
+    _setMicUI(true);
+    setTimeout(function(){_setMicUI(_micGlobalActivo);},600);
+    bep(1);
+    cmdMatch.fn();
+    return;
+  }
+  var corr=corregirFoneticaCatalogo(raw)||raw;
+  var sI=document.getElementById('sI');
+  sI.value=corr.toLowerCase();
+  filt();
+  var visibles=document.querySelectorAll('.p-r[style*="display: none"]').length;
+  var total=document.querySelectorAll('.p-r').length;
+  if(total-visibles>0)bep(1);
+  sI.style.background='#fffde7';
+  setTimeout(function(){sI.style.background='';},1200);
+}
+function iniciarMicGlobal(){
+  if(!('webkitSpeechRecognition' in window)&&!('SpeechRecognition' in window))return;
+  _micGlobalActivo=true;
+  _lanzarMicGlobal();
+}
+function _lanzarMicGlobal(){
+  if(!_micGlobalActivo)return;
+  if(!('webkitSpeechRecognition' in window)&&!('SpeechRecognition' in window))return;
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  try{if(_recGlobal)_recGlobal.abort();}catch(e){}
+  _recGlobal=new SR();
+  _recGlobal.lang='es-AR';
+  _recGlobal.continuous=true;
+  _recGlobal.interimResults=false;
+  var _idxLocal=0;
+  var _reinicioDelay=200;
+  _recGlobal.onresult=function(event){
+    _reinicioDelay=200;
+    for(var i=Math.max(event.resultIndex,_idxLocal);i<event.results.length;i++){
+      if(!event.results[i].isFinal)continue;
+      if(i<_idxLocal)continue;
+      _idxLocal=i+1;
+      var raw=event.results[i][0].transcript.trim();
+      if(!raw)continue;
+      if(document.getElementById('mHabla').classList.contains('open')){
+        if(_hablaActiva)_procesarFragmento(raw);
+        continue;
+      }
+      if(chatOpen&&document.activeElement===document.getElementById('chat-inp')){
+        if(_chatResultProcesado)continue;
+        _chatResultProcesado=true;
+        var corr=corregirFoneticaCatalogo(raw)||raw;
+        document.getElementById('chat-inp').value=corr;
+        sendChat();
+        setTimeout(function(){_chatResultProcesado=false;},1500);
+        continue;
+      }
+      _despacharFragmento(raw);
+    }
+  };
+  _recGlobal.onerror=function(e){
+    if(e.error==='not-allowed'||e.error==='service-not-allowed'){
+      _micGlobalActivo=false;_setMicUI(false);return;
+    }
+    _reinicioDelay=Math.min(_reinicioDelay*1.5,3000);
+  };
+  _recGlobal.onend=function(){
+    if(_micGlobalActivo){
+      _setMicUI(false);
+      setTimeout(function(){
+        if(_micGlobalActivo){_lanzarMicGlobal();}
+      },_reinicioDelay);
+    }
+  };
+  try{
+    _recGlobal.start();
+    _setMicUI(true);
+  }catch(e){
+    _reinicioDelay=Math.min((_reinicioDelay||200)*1.5,3000);
+    setTimeout(_lanzarMicGlobal,_reinicioDelay);
+  }
+}
+function comenzarDictado(){
+  if(!_micGlobalActivo){
+    _micGlobalActivo=true;
+    _lanzarMicGlobal();
+  }
+  var sI=document.getElementById('sI');
+  if(sI){sI.focus();sI.select();}
+}
+function resetBtnVoz(){
+  _setMicUI(_micGlobalActivo);
+}
+var _recChat=null,_chatMicActivo=false,_chatResultProcesado=false;
+function iniciarMicChat(){}
+function comenzarDictadoChat(){
+  var inp=document.getElementById('chat-inp');
+  _chatResultProcesado=false;
+  inp.focus();
+  inp.select();
+  var btn=document.getElementById('btnVozChat');
+  btn.style.color='red';btn.style.borderColor='red';btn.innerHTML='<i class="fa-solid fa-circle-dot"></i>';
+  setTimeout(function(){_setMicUI(_micGlobalActivo);},2000);
+}
+var _recHabla=null,_hablaActiva=false;
+var _numPalabras={'un':1,'uno':1,'una':1,'dos':2,'tres':3,'cuatro':4,'cinco':5,'seis':6,'siete':7,'ocho':8,'nueve':9,'diez':10};
+var _palabrasMedida=['kilo','kilos','kg','medio','media','gramo','gramos','litro','litros','unidad','unidades'];
+function buscarProductoCatalogo(linea){
+  linea=norm(linea.trim());
+  var palabras=linea.split(/\s+/).filter(function(w){return w.length>1;});
+  var soloMedida=palabras.every(function(w){return _palabrasMedida.indexOf(w)>=0;});
+  if(!palabras.length||soloMedida)return null;
+  var palQ=palabras.filter(function(w){return _palabrasMedida.indexOf(w)<0;});
+  if(!palQ.length)return null;
+  var palQF=palQ.map(function(w){return fonetica(w);});
+  var mejorCard=null,mejorNivel=0,mejorScore=0;
+  document.querySelectorAll('.p-r').forEach(function(card){
+    var rawName=card.querySelector('.p-name').getAttribute('data-n');
+    var nn=norm(rawName);
+    var nf=fonetica(nn);
+    var nivel=0;
+    for(var largo=palQ.length;largo>=1;largo--){
+      var encontro=false;
+      for(var ini=0;ini<=palQ.length-largo;ini++){
+        var sub=palQ.slice(ini,ini+largo);
+        var subF=palQF.slice(ini,ini+largo);
+        if(_fraseFoneticaEnNombre(sub,subF,nn,nf)){encontro=true;break;}
+      }
+      if(encontro){nivel=largo;break;}
+    }
+    if(nivel>mejorNivel||(nivel>0&&nivel===mejorNivel)){
+      var palNom=nn.split(/\s+/).filter(function(w){return w.length>1;});
+      var score=nivel*10-(palNom.length-nivel);
+      if(nivel>mejorNivel||(nivel===mejorNivel&&score>mejorScore)){
+        mejorNivel=nivel;mejorScore=score;mejorCard=card;
+      }
+    }
+  });
+  if(mejorCard&&mejorNivel>=1){
+    return{card:mejorCard,nombre:mejorCard.querySelector('.p-name').getAttribute('data-n')};
+  }
+  return null;
+}
+function corregirFoneticaCatalogo(txt){
+  var r=buscarProductoCatalogo(txt);
+  return r?r.nombre:null;
+}
+function abrirHabla(){
+  document.getElementById('mHabla').classList.add('open');
+  document.getElementById('mH-texto').innerHTML='';
+  document.getElementById('mH-items').innerHTML='';
+  _textoAcumHabla='';
+  _itemsHabla=[];
+  _hablaActiva=true;
+  setEstadoHabla('escuchando');
+}
+function cerrarHabla(){
+  if(_recHabla)try{_recHabla.stop();}catch(e){}
+  _hablaActiva=false;
+  document.getElementById('mHabla').classList.remove('open');
+}
+function setEstadoHabla(estado){
+  var nuez=document.getElementById('mH-nuez');
+  var ondas=document.getElementById('mH-ondas').querySelectorAll('.onda-ring');
+  var estadoTxt=document.getElementById('mH-estado');
+  var btnIco=document.getElementById('mH-btn-ico');
+  var btnTxt=document.getElementById('mH-btn-txt');
+  var boca=document.getElementById('mH-boca');
+  ondas.forEach(function(o){o.classList.remove('activa');});
+  nuez.classList.remove('hablando');
+  if(estado==='escuchando'){
+    ondas.forEach(function(o){o.classList.add('activa');});
+    nuez.classList.add('hablando');
+    estadoTxt.innerText='\uD83D\uDC42 Te escucho...';
+    if(boca)boca.setAttribute('d','M44 68 Q56 80 68 68');
+    btnIco.className='fa-solid fa-stop';
+    btnTxt.innerText='Detener';
+  }else{
+    estadoTxt.innerText='Pres\u00edona el bot\u00f3n para empezar';
+    if(boca)boca.setAttribute('d','M44 70 Q56 78 68 70');
+    btnIco.className='fa-solid fa-microphone';
+    btnTxt.innerText='Te escucho';
+  }
+}
+function toggleHabla(){
+  if(_hablaActiva){detenerHabla();}
+  else{iniciarHabla();}
+}
+var _esMobile=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+var _textoAcumHabla='';
+var _itemsHabla=[];
+var _ultimoResultIdx=0;
+function iniciarHabla(){
+  _textoAcumHabla='';
+  _itemsHabla=[];
+  _hablaActiva=true;
+  setEstadoHabla('escuchando');
+}
+function detenerHabla(){
+  _hablaActiva=false;
+  setEstadoHabla('espera');
+}
+function _lanzarRecMobile(){}
+function _lanzarRecDesktop(){}
+function _renderTranscripcion(lineaActual){
+  var html='';
+  _itemsHabla.forEach(function(it){
+    html+='<div style="color:#2e7d32;font-weight:bold;">&#10003; '+it+'</div>';
+  });
+  if(lineaActual)html+='<div style="color:#333;">'+lineaActual+'</div>';
+  document.getElementById('mH-texto').innerHTML=html;
+}
+function _procesarFragmento(frag){
+  if(!frag)return;
+  var fragL=frag.toLowerCase().trim();
+  if(/\bfinal\b/i.test(fragL)){
+    var anteFinal=fragL.replace(/\bfinal\b/gi,'').trim();
+    if(anteFinal){_textoAcumHabla+=(_textoAcumHabla?' ':'')+anteFinal;}
+    if(_textoAcumHabla.trim())_itemsHabla.push(_textoAcumHabla.trim());
+    _renderTranscripcion('');
+    bep(2);
+    detenerHabla();
+    procesarPedidoVoz(_itemsHabla);
+    return;
+  }
+  if(/\bpaso\b/i.test(fragL)){
+    var antePaso=fragL.replace(/\bpaso\b/gi,'').trim();
+    if(antePaso){_textoAcumHabla+=(_textoAcumHabla?' ':'')+antePaso;}
+    if(_textoAcumHabla.trim()){
+      _itemsHabla.push(_textoAcumHabla.trim());
+      _textoAcumHabla='';
+    }
+    bep(1);
+    _renderTranscripcion('');
+    return;
+  }
+  _textoAcumHabla+=(_textoAcumHabla?' ':'')+fragL;
+  _renderTranscripcion(_textoAcumHabla);
+}
+function detenerHabla(){
+  _hablaActiva=false;
+  if(_recHabla)try{_recHabla.stop();}catch(e){}
+  setEstadoHabla('espera');
+}
+function procesarPedidoVoz(items){
+  var itemsDiv=document.getElementById('mH-items');
+  itemsDiv.innerHTML='';
+  var encontrados=[];
+  var noEncontrados=[];
+  items.forEach(function(linea){
+    linea=linea.toLowerCase().trim();if(!linea)return;
+    var cantidad=1,esMedio=false;
+    if(/\bmedio\s+kilo\b/i.test(linea)||/\bmedia\s+kilo\b/i.test(linea)){
+      esMedio=true;
+      linea=linea.replace(/\bmedio\s+kilo\b/gi,'').replace(/\bmedia\s+kilo\b/gi,'').trim();
+    }
+    var mNum=linea.match(/^(\d+|un|uno|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez)\s*(kilos?|kg)?\s*(de\s+)?/i);
+    if(mNum){
+      var ns=mNum[1].toLowerCase();
+      cantidad=isNaN(parseInt(ns))?(_numPalabras[ns]||1):parseInt(ns);
+      linea=linea.replace(mNum[0],'').trim();
+    }else{
+      var mKilo=linea.match(/^kilo\s*(de\s+)?/i);
+      if(mKilo){cantidad=1;linea=linea.replace(mKilo[0],'').trim();}
+    }
+    if(!linea)return;
+    var res=buscarProductoCatalogo(linea);
+    if(res){
+      encontrados.push({card:res.card,nombre:res.nombre,q:cantidad,medio:esMedio});
+    }else{
+      noEncontrados.push(linea);
+    }
+  });
+  encontrados.forEach(function(item){
+    var card=item.card;
+    var price=parseFloat(card.querySelector('.p-val').getAttribute('data-o'));
+    if(item.medio){
+      var pEl=card.querySelector('.p-val');
+      if(pEl.getAttribute('data-h')!=='true'&&pEl.getAttribute('data-h')!=='quarter'){
+        if(getQty(card)===0)setQty(card,1);
+        pEl.setAttribute('data-h','true');
+        pEl.innerHTML='$\u00a0'+Math.round((price/2)*1.05).toLocaleString('es-AR');
+        var u=card.querySelector('.p-unidad');
+        if(u){u.textContent='0,5 kg';u.className='p-unidad medio';}
+      }
+    }
+    setQty(card,getQty(card)+item.q);sy();
+    var div=document.createElement('div');div.className='mH-item-ok';
+    div.innerHTML='\u2705 <b>'+item.nombre+'</b> \u2014 '+(item.medio?'0,5 kg':item.q+' kg');
+    itemsDiv.appendChild(div);
+  });
+  noEncontrados.forEach(function(linea){
+    var div=document.createElement('div');div.className='mH-item-err';
+    div.innerHTML='\u26A0\uFE0F No encontr\u00e9: <b>'+linea+'</b>';
+    itemsDiv.appendChild(div);
+  });
+  if(encontrados.length>0){
+    document.getElementById('mH-estado').innerText='\u2705 '+encontrados.length+' producto'+(encontrados.length>1?'s':'')+' agregado'+(encontrados.length>1?'s':'')+' al pedido';
+    var res2=document.createElement('div');
+    res2.style.cssText='margin-top:14px;padding:12px;background:#e8f5e9;border-radius:10px;text-align:center;';
+    res2.innerHTML='\uD83D\uDED2 Pedido actualizado. Cerr\u00e1 esta pantalla para verlo o segu\u00ed dictando.';
+    itemsDiv.appendChild(res2);
+  }
+  if(noEncontrados.length>0&&encontrados.length===0){
+    document.getElementById('mH-estado').innerText='\uD83E\uDD14 No entend\u00ed bien. Prob\u00e1 de nuevo.';
+  }
+}
+</script></body></html>
